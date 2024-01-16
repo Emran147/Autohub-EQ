@@ -50,6 +50,20 @@ class AuthController {
         res.send("Successfully logged in");
     }
 
+    static authorizationMiddleWare(req, res, next) {
+        const token = req.cookies.token;
+        try {
+            const {user_id, language} = jwt.verify(token, JWT_SECRET_KEY);
+            req.user_id = user_id;
+            req.language = language;
+            next();
+        }
+        catch(error) {
+            console.log(error)
+            res.status(401).send("Invalid token!");
+        }
+    }
+
     static #createTokenCookie(payload) {
         const token = AuthController.#generateJWT(payload);
         const tokenCookie = serialize("token", token, {
