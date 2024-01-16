@@ -1,5 +1,5 @@
 
-const Message = require("../db/schemas/message");
+const Message = require("../db/schemas/messages");
 
 class MessagesModel {
     static async getMessagesByLanguage(language) {

@@ -1,3 +1,4 @@
+// user.js/models
 const User = require("../db/schemas/user");
 
 class UserModel {
@@ -11,6 +12,10 @@ class UserModel {
         } catch (error) {
             throw error;
         }
+    }
+
+    static updateEmail(_id, newEmail) {
+        return User.findByIdAndUpdate(_id, {$set: {email: newEmail}});
     }
 }
 

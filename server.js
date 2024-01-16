@@ -5,7 +5,7 @@ const { dbConnect } = require("./server/db/dbConnect");
 
 const vehicleRouter = require("./server/routes/vehicle");
 const messagesRouter = require("./server/routes/messages");
-
+const profileRouter = require("./server/routes/profile");
 const app = express();
 
 app.use("/api/vehicle", vehicleRouter);

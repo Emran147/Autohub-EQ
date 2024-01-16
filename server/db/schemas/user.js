@@ -1,3 +1,5 @@
+// User.js/schemas
+
 const { Schema, model } = require("mongoose");
 const Vehicle = require("./vehicle");
 
