@@ -1,6 +1,6 @@
 class ContactRender {
     constructor() {       
-        this.messageListComponent = new Component(templates.MESSAGE_LIST, containers.VEHICLE_FOUND);
+        this.messageListComponent = new Component(templates.MESSAGE_LIST, containers.MESSAGE_LIST);
     }
 
     rendererMessageList(messageList) {

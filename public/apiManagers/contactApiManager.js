@@ -22,4 +22,13 @@ class ContactApi {
         // For the sake of simplicity, returning static data
         return this.damydata;
     }
+    async sendMessage(message) {
+        try {
+            const response = await $.post(baseApiRoutes.SENDMESSAGE, message);
+            console.log("Response from server:", response);
+            return response
+        } catch (error) {
+            console.error("Error sending message:", error);
+        }
+    }
 }

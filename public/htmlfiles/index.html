@@ -8,15 +8,30 @@
 </head>
 <body>
 
-    
-    <div class="search-container">
-        <div class="search-box">
-            <div class="search-input-container">
-                <input type="text" placeholder="Search Car By License Number" id="licensNumber">
-                <button id="searchButton" onclick="searchVehicle.searchVehicleByNumber()">Search</button>
+    <div id="container">
+
+    </div>
+    <div id="vehicleFound"></div>
+
+    <script id="search-container-template" type="text/x-handlebars-template">
+        <div class="search-container">
+            <div class="search-box">
+                <div class="search-input-container">
+                    <input type="text" placeholder="Search Car By License Number" id="licensNumber">
+                    <button id="searchButton" onclick="searchVehicle.searchVehicleByNumber()">Search</button>
+                </div>
+                
+                <div class="icon-bar">
+                    <button class="icon-button">⚙️</button>
+                    <button class="icon-button">👤</button>
+                    <button class="icon-button">🚖</button>
+                </div>
             </div>
+        </div>
+    </script>
+
     <script id="vehicleFound-template" type="text/x-handlebars-template">
-        <div>
+        <div id="vehicleDetails">
            <p>{{ data.make }}</p>
            <p>{{ data.model }}</p>
            <p>{{ data.year }}</p>
@@ -30,26 +45,15 @@
                 <label for="messages">Choose a Message:</label>
                 <select name="messageList" id="messageListdrop">
                     {{#each data}}
-                        <option value="{{this}}">{{this.text}}</option>
+                        <option value="{{this._id}}">{{this.text}}</option>
                     {{/each}}
                 </select>
-                <br><br>
+                <br><br>               
+                <input type="checkbox" value="SharePhoneNumber">Share Phone Number 
             </form>
             <button onclick="contact.sendMessage()">Send</button>
         </div>
     </script>
-    
-
-
-            <div class="icon-bar">
-                <button class="icon-button">⚙️</button>
-                <button class="icon-button">👤</button>
-                <button class="icon-button">🚖</button>
-            </div>
-        </div>
-    </div>
-    <div id="vehicleFound"></div>
-    <div id="messageList"></div>
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
