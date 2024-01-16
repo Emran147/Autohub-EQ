@@ -2,6 +2,12 @@ const express = require("express");
 const { PORT } = require("./server/config");
 const { dbConnect } = require("./server/db/dbConnect");
 
+require("./server/db/schemas/messages")
+require("./server/db/schemas/settings")
+require("./server/db/schemas/user")
+require("./server/db/schemas/vehicle")
+require("./server/db/schemas/vehicleApproval")
+
 const app = express();
 
 app.use(express.static(__dirname + "/public"))
