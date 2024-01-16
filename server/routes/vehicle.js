@@ -1,5 +1,5 @@
 // vehicle.js
-const { Router } = require("epxress");
+const { Router } = require("express");
 
 const router = Router();
 

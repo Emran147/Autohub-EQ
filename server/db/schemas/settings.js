@@ -1,0 +1,12 @@
+const { Schema, model } = require("mongoose");
+
+const settingsSchema = new Schema({
+    allowSMSNotifications: {type: Boolean, required: true, default: false},
+    allowWhatsappNotifications: {type: Boolean, required: true, default: true},
+    allowEmailNotifications: {type: Boolean, required: true, default: true},
+    shareContacts: {type: Boolean, required: true, default: false},
+    Owner: {type: Schema.Types.ObjectId, ref: "User"}
+})
+
+const Settings = model("setting", settingsSchema);
+module.exports = Settings;
