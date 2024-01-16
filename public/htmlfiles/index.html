@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Car</title>
+    <link rel="stylesheet" href="../cssFiles/searchVehicle.css">
+</head>
+<body>
+
+  
+    <script id="vehicleFound-template" type="text/x-handlebars-template">
+        <div class="search-container">
+            <div class="search-box">
+                <img src="./assets/logo.jpg" alt="Your Logo" class="logo">
+                <div class="search-input-container">
+                    <input type="text" placeholder="Search Car By License Number" id="licensNumber">
+                    <button id="searchButton" onclick="seachVehicle()">Search</button>
+                </div>
+                <div class="icon-bar">
+                    <button class="icon-button">⚙️</button>
+                    <button class="icon-button">👤</button>
+                    <button class="icon-button">🚖</button>
+                </div>
+            </div>
+        </div>
+    </script>
+    <div id="#vehicleFound"></div>
+    <script src="../controllers/searchVehicle.js"></script>
+    <script src="../models/searchVehicle.js"></script>
+    <script src="../apiManagers/searchVehicle.js"></script>
+    <script src="../renderers/searchVehicle.js"></script>
+
+</body>
+</html>
