@@ -6,6 +6,11 @@ const VehicleApprovalsModel = require("../models/vehicleApproval");
 class VehicleApprovalController { 
     static async getAllVehicleApprovals(req, res) {
         try {
+            const currentUserId = req.userId;
+            const isAdmin = UserModel.isAdminById(currentUserId);
+            if(!isAdmin()) {
+                return res.status(401).send("Permission Denied");
+            }
             const vehicleApprovals = await VehicleApprovalsModel.getAllVehicleApprovals();
             res.json(vehicleApprovals);
         } catch (error) {
@@ -16,6 +21,12 @@ class VehicleApprovalController {
             static async postResolveVehicleApproval(req, res) {
                 const { approvalId, approved } = req.body;
                 try {
+                    const currentUserId = req.userId;
+                    const isAdmin = UserModel.isAdminById(currentUserId);
+                    if(!isAdmin()) {
+                        return res.status(401).send("Permission Denied");
+                    }
+                    
                     if(approved) {
                         const vehicleApproval = await VehicleApprovalsModel.getVehicleApprovalById(approvalId);
                         const { user, licenseNumber} = vehicleApproval;
