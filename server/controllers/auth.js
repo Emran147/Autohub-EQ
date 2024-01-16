@@ -6,6 +6,11 @@ const UserModel = require('../models/user');
 const { serialize } = require("cookie");
 
 class AuthController {
+    static async test(req, res) {
+        req.body = {email: "john.doe@example.com", password: "1234"}
+        AuthController.login(req, res);
+    }
+
     static async register(req, res) {
         const {email, phoneNumber, fullName, language, password} = req.body;
 
@@ -74,7 +79,9 @@ class AuthController {
     }
 
     static #generateJWT(payload) {
-        return jwt.sign(payload, JWT_SECRET_KEY)
+        return jwt.sign(payload, JWT_SECRET_KEY, {
+            expiresIn: 60 * 60 * 24 * 7
+        })
     }
 
     static #hashPassword(password) {
@@ -86,9 +93,7 @@ class AuthController {
 
     static #verifyPassword(password, hashedPassword) {
         // TODO - Throw error if the virification fails
-        return bcrypt.compareSync(password, hashedPassword, {
-            expiresIn: 60 * 60 * 24 * 7
-        });
+        return bcrypt.compareSync(password, hashedPassword);
     }
 
 }
