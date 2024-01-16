@@ -6,6 +6,7 @@ const vehicleSchema = new Schema({
     forsale: {type: Boolean, required: true, default: false},
     shareDetails: {type: Boolean, required: true, default: false},
     manufacturer: {type: String},
+    model: {type: String},
     year: {type: Number},
     Node: {type: String},
     Owner: {type: Schema.Types.ObjectId, ref: "User"}
