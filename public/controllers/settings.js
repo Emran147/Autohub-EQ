@@ -6,10 +6,8 @@ class Settings {
 
     async getSettings() {
         try {
-            console.log(' iam here ')
             await this.SettingsModel.getSettings();
             const settings = this.SettingsModel.settings;
-            window.location.href = "../porifle.html";
             this.SettingsRender.renderSettings(settings)
         }
         catch(err) {
@@ -34,3 +32,4 @@ class Settings {
 }
 
 const settings = new Settings();
+settings.getSettings()
