@@ -7,7 +7,6 @@ class VehicleController {
         const { licenseNumber } = req.params;
         const vehicle = await VehicleModel.getVehicleByLicenseNumber(licenseNumber);
         const userSettings = await SettingsModel.getSettingsByUserId(vehicle.owner);
-        console.log(userSettings)
 
         const responseData = { 
             vehicle: {licenseNumber: vehicle.licenseNumber, forSale: vehicle.forSale}, 
@@ -15,12 +14,12 @@ class VehicleController {
         };
 
         if(userSettings.shareContacts) {
-            const user = UserModel.getUserById(userSettings.owner);
+            const user = await UserModel.getUserById(userSettings.owner);
             responseData.user = {phoneNumber: user.phoneNumber, email: user.email};
         }
 
         if(vehicle.shareDetails) {
-            response.vehicle = { ...response.vehicle,
+            responseData.vehicle = { ...responseData.vehicle,
                 manufacturer: vehicle.manufacturer, model: vehicle.model, year: vehicle.year, note: vehicle.note
             }
         }
