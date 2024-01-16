@@ -31,7 +31,8 @@ class VehicleController {
         }
     }
     static async patchUpdateVehicleDetails(req, res) {
-        const { vehicleId, updatedDetails } = req.body;
+        const { vehicleId, model, year, note, manufacturer } = req.body;
+        const updatedDetails = {model, year, note, manufacturer};
         try {
             const updatedVehicle = await VehicleModel.updateVehicleDetailsById(vehicleId, updatedDetails);
             if (!updatedVehicle) {
@@ -40,6 +41,20 @@ class VehicleController {
             res.json({ message: "Vehicle details updated successfully", vehicle: updatedVehicle });
         } catch (error) {
             console.error("Error updating vehicle details:", error);
+            res.status(500).send("Internal Server Error");
+        }
+    }
+
+    static async deleteVehicle(req, res) {
+        const vehicleId  = req.vehicleId ;
+        try {
+            const deletedVehicle = await VehicleModel.deleteVehicleById(vehicleId);
+            if (!deletedVehicle) {
+                return res.status(404).json({ message: "Vehicle not found" });
+            }
+            res.json({ message: "Vehicle deleted successfully" });
+        } catch (error) {
+            console.error("Error deleting vehicle:", error);
             res.status(500).send("Internal Server Error");
         }
     }
