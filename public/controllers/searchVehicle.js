@@ -11,19 +11,28 @@ class SearchVehicle {
 
     async searchVehicleByNumber() {
         const carLicenseNumber = $('#licensNumber').val();
-
+    
         if (!carLicenseNumber.replace(/\s/g, '').length) {
             alert('Check the input');
+            return;
         }
+    
         try {
             await this.searchVehicleModel.getVehicle(carLicenseNumber);
             const vehicle = this.searchVehicleModel.vehicle;
+    
+            if (jQuery.isEmptyObject(vehicle)) { 
+                alert('Vehicle not found');
+                return;
+            }
+    
             this.searchVehicleRender.rendererVehicle(vehicle);
-            
+    
         } catch (err) {
-            console.log(err);
+            console.error(err);
         }
-    };
+    }
+
 }
 
 const searchVehicle = new SearchVehicle();

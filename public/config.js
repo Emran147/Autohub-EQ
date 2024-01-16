@@ -3,6 +3,7 @@ const baseApiRoutes = {
     SEARCHVEHICLE : "/api/vehicle/",
     MESSAGELIST : "/api/messageList/",
     SENDMESSAGE : "/api/sendMessage/",
+    GETSETTINGS : "/api/settings/",
 }
 
 const templates = {
@@ -10,7 +11,8 @@ const templates = {
     VEHICLE_APPROVALS: "#vehicleApprovals-template",
     USER_PROFILE: "#userProfile-template",
     VEHICLE_FOUND: "#vehicleFound-template" ,
-    MESSAGE_LIST : "#messageList-template"
+    MESSAGE_LIST : "#messageList-template" , 
+    SETTINGS : "#settings-template",
 }
 
 const containers = {
@@ -18,5 +20,6 @@ const containers = {
     USER_PROFILE: "#userProfile",
     SEARCH_VEHICLE: "#container",
     VEHICLE_FOUND: "#vehicleFound",
-    MESSAGE_LIST:"#container"
+    MESSAGE_LIST:"#container",
+    SETTINGS : "#settingContainer"
 }
