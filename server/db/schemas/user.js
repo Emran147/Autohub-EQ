@@ -16,5 +16,5 @@ const userSchema = new Schema({
     blocked: [{type: Schema.Types.ObjectId, ref: "User"}],
 });
 
-const User = model("user", userSchema);
+const User = model("User", userSchema);
 module.exports = User;

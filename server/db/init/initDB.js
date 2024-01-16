@@ -31,7 +31,7 @@ async function initUserAndVehicleDocs() {
         userDoc.hashedPassword = "$2a$10$ixfvPP0T.kctdoQto7iFme3hGf/3BeMJbQ39LMoi7etozD5AH5ESW";
 
         vehicles.forEach(vehicle => {
-            vehicle.Owner = userDoc;
+            vehicle.owner = userDoc;
             vehicle.save();
         })
         userDoc.save();

@@ -1,7 +1,7 @@
 
 // vehicle.js/Schema
 const { Schema, model } = require("mongoose");
-const User = require("./user");
+require("./user");
 
 const vehicleSchema = new Schema({
     licenseNumber: {type: String, required: true},
@@ -11,8 +11,8 @@ const vehicleSchema = new Schema({
     model: {type: String},
     year: {type: Number},
     Node: {type: String},
-    Owner: {type: Schema.Types.ObjectId, ref: "User"}
+    owner: {type: Schema.Types.ObjectId, ref: "User"}
 })
 
-const Vehicle = model("vehicle", vehicleSchema);
+const Vehicle = model("Vehicle", vehicleSchema);
 module.exports = Vehicle;

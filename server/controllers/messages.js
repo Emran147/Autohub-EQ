@@ -15,7 +15,7 @@ class MessagesController {
 
     static async sendMessage(req, res) {
         const userId = req.userId;
-        const { message } = req.body;
+        const { licenseNumber, msg_id } = req.body;
         try {
             const { email, phoneNumber } = await UserModel.getUserEmailAndPhoneNumber(userId);
             console.log(`Email: ${email}, Phone Number: ${phoneNumber}, Message: ${message}`);

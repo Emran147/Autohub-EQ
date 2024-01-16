@@ -7,5 +7,5 @@ const vehicleApprovalSchema = new Schema({
     userIDNumber: {type: String, required: true}
 })
 
-const VehicleApproval = model("vehicleApproval", vehicleApprovalSchema);
+const VehicleApproval = model("VehicleApproval", vehicleApprovalSchema);
 module.exports = VehicleApproval;

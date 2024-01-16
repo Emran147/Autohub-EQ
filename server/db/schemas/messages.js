@@ -5,5 +5,5 @@ const messagesSchema = new Schema({
     languages: {type: Object, required: true}
 });
 
-const Messages = model("message", messagesSchema);
+const Messages = model("Message", messagesSchema);
 module.exports = Messages;

@@ -8,5 +8,5 @@ const settingsSchema = new Schema({
     Owner: {type: Schema.Types.ObjectId, ref: "User"}
 })
 
-const Settings = model("setting", settingsSchema);
+const Settings = model("Setting", settingsSchema);
 module.exports = Settings;
