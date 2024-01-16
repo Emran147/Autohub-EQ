@@ -3,6 +3,7 @@ const SettingsController = require("../controllers/SettingsController");
 
 const router = Router();
 
-router.get("/:userId", SettingsController.getSettingsByUserId);
+router.get("/", SettingsController.getSettingsByUserId);
+router.post("/", SettingsController.updeatSettingsByUserId);
 
 module.exports = router;

@@ -5,7 +5,7 @@ const settingsSchema = new Schema({
     allowWhatsappNotifications: {type: Boolean, required: true, default: true},
     allowEmailNotifications: {type: Boolean, required: true, default: true},
     shareContacts: {type: Boolean, required: true, default: false},
-    Owner: {type: Schema.Types.ObjectId, ref: "User"}
+    owner: {type: Schema.Types.ObjectId, ref: "User"}
 })
 
 const Settings = model("setting", settingsSchema);
