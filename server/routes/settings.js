@@ -5,6 +5,7 @@ const { authorizationMiddleWare } = require("../controllers/auth");
 const router = Router();
 router.use(authorizationMiddleWare);
 
-router.get("/:userId", SettingsController.getSettingsByUserId);
+router.get("/", SettingsController.getSettingsByUserId);
+router.post("/", SettingsController.updeatSettingsByUserId);
 
 module.exports = router;
