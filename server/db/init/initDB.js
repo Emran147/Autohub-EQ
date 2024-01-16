@@ -2,9 +2,10 @@ const { dbConnect, dbDisconnect } = require("../dbConnect");
 const User = require("../schemas/user");
 const Vehicle = require("../schemas/vehicle");
 const Settings = require("../schemas/settings")
+const Messages = require("../schemas/messages")
 
 const users = require("./users");
-
+const messages = require("./messages");
 
 initDB()
 
@@ -13,12 +14,14 @@ async function initDB() {
     console.log("connected to DB")
 
     await initUserAndVehicleDocs();
+    await initMessages();
 }
 
 // init users & vehicles documents
 async function initUserAndVehicleDocs() {
     await User.deleteMany({})
     await Vehicle.deleteMany({})
+    await Settings.deleteMany({})
 
     for(const user of users) {
         const vehicles = []
@@ -42,4 +45,10 @@ async function initUserAndVehicleDocs() {
         userSettings.save();
         userDoc.save();
     }
+}
+
+// init messages documents
+async function initMessages() {
+    Messages.deleteMany({})
+    Messages.insertMany(messages)
 }
