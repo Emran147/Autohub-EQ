@@ -28,6 +28,8 @@ class UserModel {
     static updateEmail(_id, newEmail) {
         return User.findByIdAndUpdate(_id, {$set: {email: newEmail}});
     }
+    static  updatePhone(_id, newPhoneNumber) {
+       return User.findByIdAndUpdate(_id, { $set: { phoneNumber: newPhoneNumber }});
 }
-
+}
 module.exports = UserModel;

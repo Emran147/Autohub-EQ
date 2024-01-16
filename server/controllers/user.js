@@ -1,6 +1,7 @@
+// user.js/controllers
 const UserModel = require("../models/user");
 class UserController {
-    static async postUpdateEmail(req, res) {     
+    static async patchUpdateEmail(req, res) {     
         const userId = req.userId; 
         const { newEmail } = req.body;
         try {
@@ -15,7 +16,20 @@ class UserController {
             res.status(500).send("Internal Server Error");
         }
     }
-
+    static async patchUpdatePhone(req, res) {
+        const userId = req.userId;
+        const { newPhoneNumber } = req.body;
+        try {
+            const updatedUser = await UserModel.updatePhone(userId, newPhoneNumber);
+            if (!updatedUser) {
+                return res.status(404).json({ message: "User not found" });
+            }
+            res.json({ message: "Phone number updated successfully" });
+        } catch (error) {
+            console.error("Error updating phone number:", error);
+            res.status(500).send("Internal Server Error");
+        }
+    }
 }
 
      

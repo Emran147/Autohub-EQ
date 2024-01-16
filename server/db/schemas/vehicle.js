@@ -10,7 +10,7 @@ const vehicleSchema = new Schema({
     manufacturer: {type: String},
     model: {type: String},
     year: {type: Number},
-    Node: {type: String},
+    note: {type: String},
     owner: {type: Schema.Types.ObjectId, ref: "User"}
 })
 
