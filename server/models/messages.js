@@ -7,7 +7,7 @@ class MessagesModel {
         return messages.map(msg => {
             return {
                 _id: msg._id,
-                text: msg[language]
+                text: msg.languages[language]
             }
         })
     }
