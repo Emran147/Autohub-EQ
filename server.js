@@ -1,14 +1,15 @@
+// Server.js
 const express = require("express");
 const { PORT } = require("./server/config");
 const { dbConnect } = require("./server/db/dbConnect");
 
-require("./server/db/schemas/messages")
-require("./server/db/schemas/settings")
-require("./server/db/schemas/user")
-require("./server/db/schemas/vehicle")
-require("./server/db/schemas/vehicleApproval")
+const vehicleRouter = require("./server/routes/vehicle");
+const messagesRouter = require("./server/routes/messages");
 
 const app = express();
+
+app.use("/api/vehicle", vehicleRouter);
+app.use("/api/messages", messagesRouter);
 
 app.use(express.static(__dirname + "/public"))
 
