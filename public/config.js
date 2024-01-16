@@ -4,6 +4,8 @@ const baseApiRoutes = {
     MESSAGELIST : "/api/messageList/",
     SENDMESSAGE : "/api/sendMessage/",
     GETSETTINGS : "/api/settings/",
+    UPDATESETTINGS : "/api/settings/",
+    GETPROFILEDETAILS :  "/api/profile/",
 }
 
 const templates = {

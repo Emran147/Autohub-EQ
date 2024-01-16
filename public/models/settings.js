@@ -7,4 +7,7 @@ class SettingModel  {
     async getSettings() {
         this.settings = await this.SettingsAPI.getSettings()
     }
+    async updateSettings(settings) {
+        this.settings = await this.SettingsAPI.updateSettings(settings)
+    }
 }
