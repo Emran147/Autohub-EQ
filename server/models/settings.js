@@ -1,5 +1,5 @@
 
-// settings.js/models
+
 const Setting = require("../db/schemas/settings"); 
 
 class SettingsModel {

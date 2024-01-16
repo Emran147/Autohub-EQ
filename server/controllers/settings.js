@@ -1,4 +1,4 @@
-// settings.js/controllers
+
 const SettingsModel = require("../models/settings");
 class SettingsController {
     static async getSettingsByUserId(req, res) {
