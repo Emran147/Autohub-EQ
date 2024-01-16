@@ -6,6 +6,6 @@ const { authorizationMiddleWare } = require("../controllers/auth");
 const router = Router();
 router.use(authorizationMiddleWare);
 
-router.get("/:licenseNumber", VehicleController.getVehicleByLicenseNumber);
+router.get("/:licenseNumber", VehicleController.searchVehicleByLicenseNumber);
 
 module.exports = router;

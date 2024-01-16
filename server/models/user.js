@@ -1,6 +1,10 @@
 const User = require("../db/schemas/user");
 
 class UserModel {
+    static getUserById(_id) {
+        return User.findById(_id);
+    }
+
     static createUser(email, phoneNumber, fullName, language, hashedPassword) {
         return User.create({
             email, phoneNumber, fullName, language, hashedPassword

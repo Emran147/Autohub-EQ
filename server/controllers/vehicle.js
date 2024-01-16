@@ -1,11 +1,30 @@
-// Vehicle.js\controllers
 const VehicleModel = require("../models/vehicle");
+const UserModel = require("../models/user");
+const SettingsModel = require("../models/settings");
 
 class VehicleController {
-    static async getVehicleByLicenseNumber(req, res) {
+    static async searchVehicleByLicenseNumber(req, res) {
         const { licenseNumber } = req.params;
         const vehicle = await VehicleModel.getVehicleByLicenseNumber(licenseNumber);
-        res.send(vehicle);
+        const userSettings = await SettingsModel.getSettingsByUserId(vehicle.owner);
+        console.log(userSettings)
+
+        const responseData = { 
+            vehicle: {licenseNumber: vehicle.licenseNumber, forSale: vehicle.forSale}, 
+            user: {}
+        };
+
+        if(userSettings.shareContacts) {
+            const user = UserModel.getUserById(userSettings.owner);
+            responseData.user = {phoneNumber: user.phoneNumber, email: user.email};
+        }
+
+        if(vehicle.shareDetails) {
+            response.vehicle = { ...response.vehicle,
+                manufacturer: vehicle.manufacturer, model: vehicle.model, year: vehicle.year, note: vehicle.note
+            }
+        }
+        res.send(responseData);
     }
     static async getUserVehicles(req, res) {
         const  userId  = req. userId;
