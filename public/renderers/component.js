@@ -6,8 +6,6 @@ class Component {
     }
 
     render(data, empty = true) {
-        console.log(data)
-
         if (empty) {
             this.clear();
         }

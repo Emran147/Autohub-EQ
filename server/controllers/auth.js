@@ -72,7 +72,9 @@ class AuthController {
         const token = AuthController.#generateJWT(payload);
         const tokenCookie = serialize("token", token, {
             httpOnly: true,
-            // secure: true,
+            secure: true,
+            sameSite: "strict",
+            path: "/",
             maxAge: 60 * 60 * 24 * 7
         })
         return tokenCookie;

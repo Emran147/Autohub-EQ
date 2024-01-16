@@ -2,7 +2,6 @@ class Contact {
     constructor() {
         this.ContactModel = new ContactModel();
         this.ContactRender = new ContactRender();
-        console.log(this.searchVehicleModel, this.searchVehicleRender)
     }
 
     async getMessagesList() {   
