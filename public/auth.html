@@ -34,7 +34,7 @@
         <input type="checkbox" id="chk" aria-hidden="true">
 
         <div class="signup">
-            <form onsubmit="validateAndGoToNextStep(event);">
+            <form onsubmit="authController.register(event);">
                 <label for="chk" aria-hidden="true">Sign up</label>
                 <input class="sign-input" type="text" name="txt" placeholder="User name" required="">
                 <input class="sign-input type="email" name="email" placeholder="Email" required="">
@@ -47,7 +47,7 @@
         </div>
 
         <div class="login">
-            <form onsubmit="validateAndGoToNextStep(event);">
+            <form onsubmit="authController.login(event);">
                 <label for="chk" aria-hidden="true">Login</label>
                 <input class="sign-input" type="email" name="email" placeholder="Email" required="">
                 <input class="sign-input"  type="password" name="pswd" placeholder="Password" required="">
@@ -58,8 +58,10 @@
     </div>
 
     
-
-    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="apiManagers/authApiManager.js"></script>
+    <script src="models/auth.js"></script>
+    <script src="controllers/authController.js"></script>
     
 </body>
 </html>
