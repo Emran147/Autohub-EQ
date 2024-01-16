@@ -1,5 +1,5 @@
 class searchVehicleRender {
-    constructor() {
+    constructor() {       
         this.vehicleComponent = new Component(templates.VEHICLE_FOUND, containers.VEHICLE_FOUND);
     }
 

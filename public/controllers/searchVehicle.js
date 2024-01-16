@@ -1,21 +1,24 @@
-class seachVehicle {
-    constructor(){
-        this.searchVehicleModel = new searchVehicleModel
-        this.searchVehicleRender = new searchVehicleRender
+class SearchVehicle {
+    constructor() {
+        this.searchVehicleModel = new searchVehicleModel();
+        this.searchVehicleRender = new searchVehicleRender();
+        console.log(this.searchVehicleModel, this.searchVehicleRender)
     }
 
-    async  seachVehicle(){
-        const carLicenseNumber  = $('#licensNumber').val()
+    async searchVehicleByNumber() {
+        const carLicenseNumber = $('#licensNumber').val();
+
         if (!carLicenseNumber.replace(/\s/g, '').length) {
-            alert('Check the input')
+            alert('Check the input');
         }
-        try {        
-            await this.searchVehicleModel.getVehicle(carLicenseNumber)
-            const vehicle = this.searchVehicleModel.vehicle
-            this.searchVehicleRender.rendererVehicle(vehicle)
-        }
-        catch(err) {
+        try {
+            await this.searchVehicleModel.getVehicle(carLicenseNumber);
+            const vehicle = this.searchVehicleModel.vehicle;
+            this.searchVehicleRender.rendererVehicle(vehicle);
+        } catch (err) {
             console.log(err);
         }
-    }
+    };
 }
+
+const searchVehicle = new SearchVehicle();
