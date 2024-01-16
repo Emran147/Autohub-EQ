@@ -59,7 +59,6 @@ class AuthController {
             next();
         }
         catch(error) {
-            console.log(error)
             res.status(401).send("Invalid token!");
         }
     }
