@@ -1,12 +1,7 @@
 const express = require("express");
 const { PORT } = require("./server/config");
 const { dbConnect } = require("./server/db/dbConnect");
-
-require("./server/db/schemas/messages")
-require("./server/db/schemas/settings")
-require("./server/db/schemas/user")
-require("./server/db/schemas/vehicle")
-require("./server/db/schemas/vehicleApproval")
+const authRouter = require("./server/routes/auth");
 
 const app = express();
 
@@ -14,6 +9,8 @@ app.use(express.static(__dirname + "/public"))
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+
+app.use("/api/auth", authRouter);
 
 async function main() {
     await dbConnect();
