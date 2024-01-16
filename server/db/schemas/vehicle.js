@@ -1,3 +1,5 @@
+
+// vehicle.js/Schema
 const { Schema, model } = require("mongoose");
 const User = require("./user");
 

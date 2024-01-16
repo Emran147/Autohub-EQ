@@ -1,4 +1,4 @@
-// vehicle.js
+// vehicle.js\routes
 const { Router } = require("express");
 const VehicleController = require("../controllers/vehicle");
 
