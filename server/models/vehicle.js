@@ -13,7 +13,12 @@ class VehicleModel {
         static updateVehicleForSaleById(vehicleId, forsale) {
            return Vehicle.findByIdAndUpdate( vehicleId,{ $set: { forsale } });
     }
+    static async updateShareVehicleDetailsById(vehicleId, shareDetails) {
+      return Vehicle.findByIdAndUpdate( vehicleId,{ $set: { shareDetails } });
         
 }
-
+static updateVehicleDetailsById(vehicleId, updatedDetails) {
+    return Vehicle.findByIdAndUpdate(vehicleId,{ $set: updatedDetails });
+}
+    }
 module.exports = VehicleModel;

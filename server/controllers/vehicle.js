@@ -19,7 +19,6 @@ class VehicleController {
     }
     static async patchUpdateVehicleForSale(req, res) {
         const { forsale,vehicleId } = req.body;
-        
         try {
             const updatedVehicle = await VehicleModel.updateVehicleForSaleById(vehicleId, forsale);
             if (!updatedVehicle) {
@@ -28,6 +27,19 @@ class VehicleController {
             res.json({ message: "Vehicle for sale status updated successfully", vehicle: updatedVehicle });
         } catch (error) {
             console.error("Error updating vehicle for sale status:", error);
+            res.status(500).send("Internal Server Error");
+        }
+    }
+    static async patchUpdateVehicleDetails(req, res) {
+        const { vehicleId, updatedDetails } = req.body;
+        try {
+            const updatedVehicle = await VehicleModel.updateVehicleDetailsById(vehicleId, updatedDetails);
+            if (!updatedVehicle) {
+                return res.status(404).json({ message: "Vehicle not found" });
+            }
+            res.json({ message: "Vehicle details updated successfully", vehicle: updatedVehicle });
+        } catch (error) {
+            console.error("Error updating vehicle details:", error);
             res.status(500).send("Internal Server Error");
         }
     }
