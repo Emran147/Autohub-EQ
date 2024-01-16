@@ -20,10 +20,9 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.static(__dirname + "/public"))
 
 app.use("/api/auth", authRouter);
-app.use("*", authorizationMiddleWare);
 
-app.use("/api/vehicle", vehicleRouter);
-app.use("/api/messages", messagesRouter);
+app.use("/api/vehicle", vehicleRouter, authorizationMiddleWare);
+app.use("/api/messages", messagesRouter, authorizationMiddleWare);
 
 
 async function main() {
