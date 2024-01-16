@@ -1,6 +1,5 @@
-// user.js/controllers
-const UserModel = require("../models/user");
-class UserController {
+  const UserModel = require("../models/user");
+   class UserController {
     static async patchUpdateEmail(req, res) {     
         const userId = req.userId; 
         const { newEmail } = req.body;

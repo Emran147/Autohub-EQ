@@ -31,13 +31,14 @@ class UserModel {
     static  updatePhone(_id, newPhoneNumber) {
        return User.findByIdAndUpdate(_id, { $set: { phoneNumber: newPhoneNumber }});
     }
-
-    // static addVehicleById(_id, vehicle) {
-    //     User.findOneAndUpdate()
-    // }
-
+ 
     static addVehicleById(userId, vehicleId) {
         return User.findOneAndUpdate({ _id: userId },{ $addToSet: { vehicles: vehicleId }});
+    }
+
+    static async isAdminById(_id) {
+        const user = await User.findById(_id);
+        return user.admin;
     }
 }
 

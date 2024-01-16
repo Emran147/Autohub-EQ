@@ -14,6 +14,7 @@ const userSchema = new Schema({
     vehicles: [{type: Schema.Types.ObjectId, ref: "Vehicle"}],
     lastLocation: {type: Object},
     blocked: [{type: Schema.Types.ObjectId, ref: "User"}],
+    admin: {type: Boolean, default: false}
 });
 
 const User = model("User", userSchema);
