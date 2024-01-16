@@ -6,6 +6,7 @@ const baseApiRoutes = {
     GETSETTINGS : "/api/settings/",
     UPDATESETTINGS : "/api/settings/",
     GETPROFILEDETAILS :  "/api/profile/",
+    UPDATEUSERDETAILS : "/api/userDetails",
 }
 
 const templates = {

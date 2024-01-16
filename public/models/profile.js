@@ -6,7 +6,10 @@ class ProfileModel {
     async getEmailAndPhonNumber() {
         this.profileDetails = await this.profileApiManager.getEmailAndPhonNumber();
     }
-    
+    async updateUserDetails() {
+        this.profileDetails = await this.profileApiManager.updateUserDetails();
+    }
+
     
 
 }

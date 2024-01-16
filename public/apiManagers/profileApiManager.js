@@ -11,4 +11,10 @@ class ProfileApiManager {
         // For the sake of simplicity, returning static data
         return this.damydata;
     }
+    async updateUserDetails() {
+        // Example using $.get (make sure jQuery is loaded)
+        // return $.post(baseApiRoutes.UPDATEUSERDETAILS );
+        // For the sake of simplicity, returning static data
+        return this.damydata;
+    }
 }
