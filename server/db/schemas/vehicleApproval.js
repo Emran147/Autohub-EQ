@@ -1,3 +1,4 @@
+// vehicleApproval.js/Schemas
 const { Schema, model } = require("mongoose");
 const User = require("./user");
 

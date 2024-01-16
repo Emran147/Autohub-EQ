@@ -31,6 +31,10 @@ class VehicleModel {
     static  deleteVehicleById(vehicleId) {
         return Vehicle.findByIdAndRemove(vehicleId); 
     }
+
+    static createVehicle(licenseNumber, user) {
+        return Vehicle.create({licenseNumber, owner: user});
+    }
 }
 
 module.exports = VehicleModel;
