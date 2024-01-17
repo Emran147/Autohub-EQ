@@ -1,4 +1,4 @@
-// messages.js /Schema
+
 const { Schema, model } = require("mongoose");
 
 const messagesSchema = new Schema({

@@ -8,7 +8,7 @@ const { dbConnect } = require("./server/db/dbConnect");
 const authRouter = require("./server/routes/auth");
 const vehicleRouter = require("./server/routes/vehicle");
 const messagesRouter = require("./server/routes/messages");
-const profileRouter = require("./server/routes/profile");
+const fineRouter = require("./server/routes/fine");
 
 const app = express();
 
@@ -22,6 +22,7 @@ app.use("/api/auth", authRouter);
 
 app.use("/api/vehicle", vehicleRouter);
 app.use("/api/messages", messagesRouter);
+app.use("/api/fines", fineRouter);
 
 
 async function main() {
