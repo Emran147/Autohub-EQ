@@ -4,6 +4,6 @@ class searchVehicleModel {
     }
 
     async getVehicle(licenseNumber) {
-        this.vehicleData = await searchVehicleAPI.getVehicle(licenseNumber);
+        this.vehicleData = await VehicleApiManager.getVehicleByLicenseNumber(licenseNumber);
     }
 }

@@ -1,14 +1,10 @@
 const baseApiRoutes = {
+    USER: "/api/users/",
+    SETTINGS: "/api/settings/",
     ADMIN: "/api/admin/",
     VEHICLE : "/api/vehicle/",
-    MESSAGELIST : "/api/messageList/",
-    SENDMESSAGE : "/api/sendMessage/",
-    GETSETTINGS : "/api/settings/",
-    UPDATESETTINGS : "/api/settings/",
-    GETPROFILEDETAILS :  "/api/profile/",
-    UPDATEEMAIL : "/api/email",
-    UPDATEPHONENUMBER : "/api/phoneNumber",
-    GETVEHICLES : "api/vehicles"
+    MESSAGES : "/api/messages/",
+    VEHICLE_APPROVALS: "/api/vehicleApprovals"
 }
 
 const templates = {

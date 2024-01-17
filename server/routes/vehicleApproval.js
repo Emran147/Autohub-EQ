@@ -6,6 +6,6 @@ const router = Router();
 router.use(authorizationMiddleWare);
 
 router.get("/", VehicleApprovalController.getAllVehicleApprovals);
-router.post("/", VehicleApprovalController.createVehicleApproval);
+// router.post("/", VehicleApprovalController.createVehicleApproval);
 
 module.exports = router;
