@@ -2,7 +2,7 @@ const baseApiRoutes = {
     USER: "/api/users/",
     SETTINGS: "/api/settings/",
     ADMIN: "/api/admin/",
-    VEHICLE : "/api/vehicle/",
+    VEHICLE : "/api/vehicles/",
     MESSAGES : "/api/messages/",
     VEHICLE_APPROVALS: "/api/vehicleApprovals"
 }
