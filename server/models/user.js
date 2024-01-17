@@ -42,10 +42,12 @@ class UserModel {
     }
 
     static updateEmail(_id, newEmail) {
-        return User.findByIdAndUpdate(_id, {$set: {email: newEmail}});
+        console.log(_id, newEmail)
+        return User.findByIdAndUpdate(_id, {$set: {email: newEmail}}, {new: true});
     }
+    
     static  updatePhone(_id, newPhoneNumber) {
-       return User.findByIdAndUpdate(_id, { $set: { phoneNumber: newPhoneNumber }});
+       return User.findByIdAndUpdate(_id, { $set: { phoneNumber: newPhoneNumber }}, {new: true});
     }
  
     static addVehicleById(userId, vehicleId) {

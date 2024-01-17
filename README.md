@@ -18,9 +18,16 @@
 | /api/register                 | POST | {fullName, email, phoneNumber, password}   | text      |
 | /api/test                     | GET  | This route is used to get a JWT for testing
 
-# Profile Routes
+# Settings Routes
 | Route                         | Type | Request                                    | Response  |
 |-------------------------------|------|--------------------------------------------|-----------|
 | /api/settings/                | GET  |                                            | {allowSMSNotifications, allowWhatsappNotifications, allowEmailNotifications, shareContacts} |
 | /api/settings/                | POST | {allowSMSNotifications, allowWhatsappNotifications, allowEmailNotifications, shareContacts} | {allowSMSNotifications, allowWhatsappNotifications, allowEmailNotifications, shareContacts} |
-| 
+|
+
+# User Routes
+| Route                         | Type | Request                                    | Response  |
+|-------------------------------|------|--------------------------------------------|-----------|
+| /api/users/emailAndPhone      | GET  |                                            | {email, phoneNumber} |
+| /api/users/email              | PATCH| {email}                                    | {email}   |
+| /api/users/phone              | PATCH| {phoneNumber}                              | {phoneNumber} |
