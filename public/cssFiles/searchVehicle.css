@@ -9,18 +9,19 @@
 }
 #vehicleFound{
   position: absolute;
-  top: 20%;
-  left: 25%;
+  top: 30%;
+  left: 18%;
 }
 #vehicleDetails {
   background-color: #f2f2f2; /* Light grey background */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.71); /* Subtle shadow */
   max-width: 400px; /* Adjust as needed */
   margin: auto;
   text-align: center; /* Center-aligns all content */
   font-family: Arial, sans-serif; /* Default font */
+
 }
 
 #vehicleDetails p {
@@ -167,11 +168,11 @@
     padding: 15px;
   }
   .messagesContainer {
-    width: 50%; /* Adjust width for larger screens */
+    width: 80%; /* Adjust width for larger screens */
 }
 
 .messagesContainer select {
-    width: 50%; /* Adjust width for larger screens */
+    width: 80%; /* Adjust width for larger screens */
 }
 
   #searchInput {
