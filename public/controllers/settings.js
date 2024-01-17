@@ -19,6 +19,7 @@ class Settings {
         const checkboxes = document.querySelectorAll('.settings-checkbox');
         let settings = {};
         checkboxes.forEach(checkbox => {
+            console.log(checkbox.name, checkbox.checked)
             settings[checkbox.name] = checkbox.checked;
         });
         return settings;
@@ -31,7 +32,8 @@ class Settings {
         try {
             await this.SettingsModel.updateSettings(settings);
             const settingsAfterUpdate = this.SettingsModel.settings;
-            this.SettingsRender.renderSettings(settings)
+            console.log("TEST", settingsAfterUpdate)
+            this.SettingsRender.renderSettings(settingsAfterUpdate)
         }
         catch(err) {
             console.log(err);

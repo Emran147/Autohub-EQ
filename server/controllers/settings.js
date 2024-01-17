@@ -6,7 +6,6 @@ class SettingsController {
         try {
             const settings = await SettingsModel.getSettingsByUserId(userId);
             res.json(settings);
-            console.log(settings)
         } catch (error) {
             console.error("Error fetching settings:", error);
             res.status(500).send("Internal Server Error");
@@ -18,7 +17,7 @@ class SettingsController {
         const updatedSettings = req.body;
         try {
             const settings = await SettingsModel.updateSettingsByUserId(userId, updatedSettings);
-            res.json({ message: "Settings updated successfully", settings });
+            res.json(settings);
         } catch (error) {
             console.error("Error updating settings:", error);
             res.status(500).send("Internal Server Error");

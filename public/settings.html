@@ -11,12 +11,12 @@
     <script id="settings-template" type="text/x-handlebars-template">
         Settings Template 
         <br>
-        {{#each data}}
-        <label>
-            {{this.key}}: 
-            <input type="checkbox" class="settings-checkbox" name="{{this.key}}" {{#if this.value}}checked{{/if}}>
-        </label>
-        <br>
+        {{#each settings}}
+            <label>
+                {{name}}: 
+                <input type="checkbox" class="settings-checkbox" name="{{this.name}}" {{#if this.value}}checked{{/if}}>
+            </label>
+            <br>
         {{/each}}
         <button onclick="settings.updateSettings()">Update </button>
     </script>

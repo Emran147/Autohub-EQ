@@ -6,7 +6,7 @@ class SettingsModel {
     }
 
     static updateSettingsByUserId(userId, updatedSettings) {
-      return  Setting.findOneAndUpdate({owner: userId}, { $set: {...updatedSettings }})        
+      return  Setting.findOneAndUpdate({owner: userId}, { $set: {...updatedSettings }}, {new: true})
     }
 }
 
