@@ -9,7 +9,7 @@
 <body>
 
     <div id="container">
-
+        
     </div>
     <div id="vehicleFound"></div>
 
@@ -21,7 +21,6 @@
                     <button id="searchButton" onclick="searchVehicle.searchVehicleByNumber()">Search</button>
                 </div>
                 <div class="icon-bar">
-                    <a href="verifications.html"><button class="icon-button" >admin</button></a>
                     <a href="settings.html"><button class="icon-button" >⚙️</button></a>
                     <a href="profile.html"><button class="icon-button">👤</button></a>
                     <a href="vehicles.html"><button class="icon-button">🚖</button></a>
@@ -42,25 +41,28 @@
                 {{/if}}
             {{/if}}
             {{#if user.email}}
-                {{ user.phoneNumber }}
-                {{ user.email }}
+             <p>{{ user.phoneNumber }}</p>   
+             <p>  {{ user.email }}</p>
             {{/if}}
            <button onclick="contact.getMessagesList()">Contact</button>
         </div>
      </script>
+
+
      <script id="messageList-template" type="text/x-handlebars-template">
-        <div>
+        <div class="messagesContainer">
             <form action="">
                 <label for="messages">Choose a Message:</label>
                 <select name="messageList" id="messageListdrop">
-                    {{#each data}}
-                        <option value="{{this._id}}">{{this.text}}</option>
-                    {{/each}}
-                </select>
-                <br><br>               
-                <input type="checkbox" value="SharePhoneNumber">Share Phone Number 
+                    {{#each messageList}}
+                    <option class="messageOption" value="{{this._id}}" title="{{this.text}}">{{this.text}}</option>
+                    {{/each}}                </select>
+                <br><br>
+                <label class="checkbox-inline">
+                    <input type="checkbox" value="SharePhoneNumber"> Share Phone Number
+                </label>
+                <button onclick="contact.sendMessage()">Send</button>
             </form>
-            <button onclick="contact.sendMessage()">Send</button>
         </div>
     </script>
 

@@ -9,19 +9,26 @@
     Vehicles  page
 
     <script id="vehicles-template" type="text/x-handlebars-template">
-     vehicles template
-     <Br>
-        {{#each data}}
-        vehicle License  {{this.LicenseNumber}}
-     <Br>
-         vehicle Year  {{this.year}}
-       <br>
-       <button onclick="vehicles.deleteVehicle()">Delete Vehicle</button>  
-        {{/each}}
 
-    </script>
-    <script id="addingVehicle-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="car-item">
+            <div class="toggle-container">
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <span>Share Car Detail</span>
+            </div>
+            
+        </div>
+        {{/each}}
+        <button class="add-car-button">Add New Car</button>
+        <button class="delete-car-button">Delete Car</button>
+         </script>
+
+      <script id="addingVehicle-template" type="text/x-handlebars-template">
        adding  vehicles template
+
        </script>
     
       <div id="vehiclesContainer"></div>

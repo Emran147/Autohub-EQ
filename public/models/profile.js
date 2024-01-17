@@ -1,8 +1,6 @@
 class ProfileModel {
     constructor(){
         this.profileDetails = {}  
-        this.updatedEmail = {}
-        this.updatedPhoneNumber = {}
     }
 
     async getEmailAndPhonNumber() {
@@ -10,10 +8,12 @@ class ProfileModel {
     }
 
     async updateUserEmail(newEmail) {
-        this.profileDetails.email = await UserApiManager.updateEmail(newEmail);
+        const { email } = await UserApiManager.updateEmail(newEmail);
+        this.profileDetails.email = email;
     }
 
-    async updateUserPhoneNumber(phoneNumber) {
-        this.profileDetails.phoneNumber = await UserApiManager.updatePhoneNumber(phoneNumber);
+    async updateUserPhoneNumber(newPhoneNumber) {
+        const { phoneNumber } = await UserApiManager.updatePhoneNumber(newPhoneNumber);
+        this.profileDetails.phoneNumber = phoneNumber;
     }
 }

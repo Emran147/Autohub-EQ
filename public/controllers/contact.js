@@ -20,18 +20,17 @@ class Contact {
         const selectedMessageID = messageDropdown.value;
         const sharePhoneNumberCheckbox = document.querySelector('input[type="checkbox"][value="SharePhoneNumber"]');
         const isPhoneNumberShared = sharePhoneNumberCheckbox.checked;
-        const carLicenseNumber = searchVehicle.searchVehicleModel.vehicle.licenseNumber;
+        console.log(searchVehicle.searchVehicleModel.vehicle);
+        const carLicenseNumber = searchVehicle.searchVehicleModel.vehicleData.vehicle.licenseNumber;
         const message = {
-            selectedMessageID : selectedMessageID,
-            isPhoneNumberShared : isPhoneNumberShared,
-            carLicenseNumber : carLicenseNumber,
+            msg_id : selectedMessageID,
+            sharePhone : isPhoneNumberShared,
+            licenseNumber : carLicenseNumber,
         }
         try {   
             const response = await this.ContactModel.sendMessage(message)
-            if(response=='succes'){
-                alert("The Message Sent Successfuly")
-                searchVehicle.searchVehicleRender.renderSearchForm();
-            }
+            alert("The Message Sent Successfuly")
+            searchVehicle.searchVehicleRender.renderSearchForm();
         } catch (err) {
             console.log(err);
         }

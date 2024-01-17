@@ -4,7 +4,7 @@ class ContactRender {
     }
 
     rendererMessageList(messageList) {
-        this.messageListComponent.render(messageList, true);
+        this.messageListComponent.render({messageList}, true);
     }
     rendererMessageListError() {
 

@@ -5,10 +5,10 @@ class ContactModel {
 
     async getMessagesList() {
         this.messagesList = await MessagesApiManager.getAllMessages();
-
     }
-    async sendMessage(message) {
-      const response =   await MessagesApiManager.sendMessage(message);
+    
+    sendMessage(message) {
+        const response = MessagesApiManager.sendMessage(message);
         return response
     }   
 }

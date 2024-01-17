@@ -14,6 +14,7 @@ class MessagesModel {
 
     static async getMessageById(messageId, language) {
         const msg = await Message.findById(messageId);
+        console.log(msg);
         return msg.languages[language]
     }
 }
