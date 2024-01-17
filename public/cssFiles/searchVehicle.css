@@ -9,7 +9,7 @@
 }
 #vehicleFound{
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 18%;
 }
 #vehicleDetails {
@@ -126,11 +126,17 @@
   margin-bottom: 10px;
   display: block; /* Makes label display as a block-level element */
 }
-
+.logo {
+  width: 150px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
+}
 .messagesContainer .checkbox-inline {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  margin-left: 10%;
 }
 
 .messagesContainer .checkbox-inline input[type="checkbox"] {
@@ -153,7 +159,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: fit-content; /* Adjusts the button width to fit its content */
+  width: 100%; /* Adjusts the button width to fit its content */
   margin-top: 20px; /* Adds space above the button */
 }
 

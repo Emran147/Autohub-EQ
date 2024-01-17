@@ -95,6 +95,12 @@ a.gohome-button {
 .profile-button:hover {
   background-color: #218838;
 }
+.logo {
+  width: 150px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
+}
 
 /* Responsive styling for tablets and larger devices */
 @media (min-width: 768px) {
