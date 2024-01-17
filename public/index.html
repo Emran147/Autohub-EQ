@@ -31,10 +31,17 @@
 
     <script id="vehicleFound-template" type="text/x-handlebars-template">
         <div id="vehicleDetails">
-           <p>{{ data.make }}</p>
-           <p>{{ data.model }}</p>
-           <p>{{ data.year }}</p>
-           <p>{{ data.licenseNumber }}</p>
+            <p>{{ vehicle.licenseNumber }}</p>
+            {{#if shareDetails}}
+                <p>{{ vehicle.make }}</p>
+                <p>{{ vehicle.manufacturer }}</p>
+                <p>{{ vehicle.model }}</p>
+                <p>{{ vehicle.year }}</p>
+            {{/if}}
+            {{#if user.email}}
+                {{ user.phoneNumber }}
+                {{ user.email }}
+            {{/if}}
            <button onclick="contact.getMessagesList()">Contact</button>
         </div>
      </script>

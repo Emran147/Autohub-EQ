@@ -4,6 +4,7 @@ class AuthModel {
     }
     // use AuthApiManager to login
     login(email, password) {
+        console.log(email)
         return this.authApiManager.login(email, password);
     }
     // use AuthApiManager to register

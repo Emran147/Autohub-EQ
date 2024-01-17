@@ -1,6 +1,6 @@
 const baseApiRoutes = {
     ADMIN: "/api/admin/",
-    SEARCHVEHICLE : "/api/vehicle/",
+    VEHICLE : "/api/vehicle/",
     MESSAGELIST : "/api/messageList/",
     SENDMESSAGE : "/api/sendMessage/",
     GETSETTINGS : "/api/settings/",

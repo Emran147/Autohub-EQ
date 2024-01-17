@@ -7,8 +7,8 @@ class SearchVehicleRender {
     renderSearchForm() {
         this.searchForm.render();
     }
-    rendererVehicle(vehicle) {
-        this.vehicleComponent.render(vehicle, false);
+    rendererVehicle(vehicleData) {
+        this.vehicleComponent.render(vehicleData, false);
     }
     removeVehicle(){
         this.vehicleComponent.clear();

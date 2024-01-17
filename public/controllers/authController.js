@@ -15,8 +15,10 @@ class AuthController {
     // 2- use AuthModel to send login request
     // 3- redirect to the main page on success - alert error on failure
     login() {
-        const email = $('.sign-input[name="email"]').val();
-        const password = $('.sign-input[name="pswd"]').val();
+        const email = $('#loginEmail').val();
+        const password = $('#loginPassword').val();
+
+        console.log(email, password)
 
         this.authModel.login(email, password)
             .then(response => {
