@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cssFiles/settingsStyle.css">
     <title>Document</title>
 </head>
 <body>
-    Settings  page
 
     <script id="settings-template" type="text/x-handlebars-template">
-        Settings Template 
+        <div class="settings-container">
+            <a href="index.html"><button class="icon-button" >⬅️</button></a>
+      <h1 id="title">Settings Page</h1>  
         <br>
+        <div class="checkbox-container">
         {{#each settings}}
-            <label>
+            <label class="settings">
                 {{name}}: 
                 <input type="checkbox" class="settings-checkbox" name="{{this.name}}" {{#if this.value}}checked{{/if}}>
             </label>
             <br>
         {{/each}}
+        </div>
         <button onclick="settings.updateSettings()">Update </button>
+    </div>
     </script>
     
     <div id="settingContainer"></div>
