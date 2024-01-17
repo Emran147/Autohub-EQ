@@ -34,7 +34,6 @@ class VehicleModel {
     }
 
     static deleteVehicleById(vehicleId) {
-        console.log(vehicleId)
         return Vehicle.findByIdAndDelete(vehicleId); 
     }
 
