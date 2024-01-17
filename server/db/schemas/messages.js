@@ -1,8 +1,7 @@
-// messages.js /Schema
 const { Schema, model } = require("mongoose");
 
 const messagesSchema = new Schema({
-    languages: {type: Object, required: true}
+    languages: {type: {}, required: true}
 });
 
 const Messages = model("Message", messagesSchema);

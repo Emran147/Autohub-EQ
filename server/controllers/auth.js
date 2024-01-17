@@ -7,7 +7,7 @@ const { serialize } = require("cookie");
 
 class AuthController {
     static async test(req, res) {
-        req.body = {email: "john.doe@example.com", password: "1234"}
+        req.body = {email: "jaafariramadan@gmail.com", password: "1234"}
         AuthController.login(req, res);
     }
 
@@ -59,7 +59,7 @@ class AuthController {
         const token = req.cookies.token;
         try {
             const {user_id, language} = jwt.verify(token, JWT_SECRET_KEY);
-            req.user_id = user_id;
+            req.userId = user_id;
             req.language = language;
             next();
         }

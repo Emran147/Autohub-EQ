@@ -5,6 +5,7 @@ const { authorizationMiddleWare } = require("../controllers/auth");
 const router = Router();
 
 router.use(authorizationMiddleWare);
+
 router.get("/personal-details", UserController.getUserEmailAndPhoneNumber);
 router.patch("/email", UserController.updateEmail);
 
