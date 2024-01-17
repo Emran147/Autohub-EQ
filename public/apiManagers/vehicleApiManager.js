@@ -1,6 +1,6 @@
 class VehicleApiManager {
     static getVehicleByLicenseNumber(licenseNumber) {
-        return $.get(baseApiRoutes.VEHICLE + carLicense);
+        return $.get(baseApiRoutes.VEHICLE + licenseNumber);
     }
 
     // gets the curren user's vehicles

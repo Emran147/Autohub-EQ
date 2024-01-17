@@ -6,6 +6,11 @@ class VehicleController {
     static async searchVehicleByLicenseNumber(req, res) {
         const { licenseNumber } = req.params;
         const vehicle = await VehicleModel.getVehicleByLicenseNumber(licenseNumber);
+
+        if(!vehicle) {
+            return res.status(404).json({ message: "Vehicle not found" });
+        }
+
         const userSettings = await SettingsModel.getSettingsByUserId(vehicle.owner);
 
         const responseData = { 
