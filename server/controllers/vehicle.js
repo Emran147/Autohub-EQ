@@ -96,7 +96,7 @@ class VehicleController {
             if (!deletedVehicle) {
                 return res.status(404).json({ message: "Vehicle not found" });
             }
-            res.json({ message: "Vehicle deleted successfully" });
+            res.json("Vehicle deleted successfully");
         } catch (error) {
             console.error("Error deleting vehicle:", error);
             res.status(500).send("Internal Server Error");
