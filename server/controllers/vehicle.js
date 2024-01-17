@@ -41,16 +41,33 @@ class VehicleController {
     static async updateVehicleForsale(req, res) {
         const { forsale, vehicleId } = req.body;
         try {
+            console.log(forsale, vehicleId);
             const updatedVehicle = await VehicleModel.updateVehicleForSaleById(vehicleId, forsale);
             if (!updatedVehicle) {
                 return res.status(404).json({ message: "Vehicle not found" });
             }
             res.json({ message: "Vehicle for sale status updated successfully", vehicle: updatedVehicle });
         } catch (error) {
-            console.error("Error updating vehicle for sale status:", error);
+            console.error("Error updating vehicle forsale status:", error);
             res.status(500).send("Internal Server Error");
         }
     }
+
+    static async updateVehicleShareDetails(req, res) {
+        const { shareDetails, vehicleId } = req.body;
+        try {
+            console.log(shareDetails, vehicleId);
+            const updatedVehicle = await VehicleModel.updateVehicleShareDetailsById(vehicleId, shareDetails);
+            if (!updatedVehicle) {
+                return res.status(404).json({ message: "Vehicle not found" });
+            }
+            res.json({ message: "Vehicle shareDetails status updated successfully", vehicle: updatedVehicle });
+        } catch (error) {
+            console.error("Error updating vehicle shareDetails status:", error);
+            res.status(500).send("Internal Server Error");
+        }
+    }
+
     static async updateVehicleDetails(req, res) {
         const { vehicleId, model, year, note, manufacturer } = req.body;
         const updatedDetails = {model, year, note, manufacturer};
@@ -67,9 +84,10 @@ class VehicleController {
     }
 
     static async deleteVehicle(req, res) {
-        const vehicleId  = req.vehicleId ;
+        const { vehicleId } = req.body;
         try {
             const deletedVehicle = await VehicleModel.deleteVehicleById(vehicleId);
+            console.log(deletedVehicle);
             if (!deletedVehicle) {
                 return res.status(404).json({ message: "Vehicle not found" });
             }

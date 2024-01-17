@@ -30,7 +30,6 @@ async function initUserAndVehicleDocs() {
             vehicle.shareDetails = true;
             vehicles.push(new Vehicle(vehicle));
         }
-        console.log(vehicles.map(v => v.shareDetails));
         const userSettings = new Settings({ allowSMSNotifications: true, allowWhatsappNotifications: true, allowEmailNotifications: true, shareContacts: true });
         
         user.vehicles = vehicles;
@@ -51,6 +50,6 @@ async function initUserAndVehicleDocs() {
 
 // init messages documents
 async function initMessages() {
-    Messages.deleteMany({})
+    await Messages.deleteMany({}).then()
     Messages.insertMany(messages)
 }
