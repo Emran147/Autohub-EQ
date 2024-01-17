@@ -33,8 +33,9 @@ class VehicleModel {
         return VehicleModel.updateVehicleDataById(vehicleId, updatedDetails);
     }
 
-    static  deleteVehicleById(vehicleId) {
-        return Vehicle.findByIdAndRemove(vehicleId); 
+    static deleteVehicleById(vehicleId) {
+        console.log(vehicleId)
+        return Vehicle.findByIdAndDelete(vehicleId); 
     }
 
     static createVehicle(licenseNumber, user) {

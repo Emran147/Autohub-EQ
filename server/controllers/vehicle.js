@@ -84,9 +84,10 @@ class VehicleController {
     }
 
     static async deleteVehicle(req, res) {
-        const vehicleId  = req.vehicleId ;
+        const { vehicleId } = req.body;
         try {
             const deletedVehicle = await VehicleModel.deleteVehicleById(vehicleId);
+            console.log(deletedVehicle);
             if (!deletedVehicle) {
                 return res.status(404).json({ message: "Vehicle not found" });
             }
