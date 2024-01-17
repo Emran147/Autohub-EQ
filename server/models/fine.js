@@ -6,12 +6,12 @@ class FineModel {
         return Fine.find({user: userId});
     }
 
-    static createFine(title, description, fineAmount, user) {
-        return Fine.create({ title, description, fineAmount, user });
+    static createFine(title, description, fineAmount, userId) {
+        return Fine.create({ title, description, fineAmount, userId });
     }
 
     static payFine(fineId) {
-        return Fine.findByIdAndUpdate(fineId, {$set: {isPayed: true}});
+        return Fine.findByIdAndUpdate(fineId, {$set: {isPayed: true}}, {new: true});
     }
 }
 

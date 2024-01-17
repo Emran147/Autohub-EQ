@@ -4,7 +4,8 @@ const FineModel = require("../models/fine");
 
 class FineController {
     static async getUserFines(req, res) {
-        const userId = req.userId;
+        // const userId = req.userId;
+        const userId = "65a657bbe0e059a24c54c031";
         try {
             const fines = await FineModel.getFinesByUserId(userId);
             res.json(fines);
@@ -15,13 +16,17 @@ class FineController {
     }
     
     static async createFine(req, res) {
-        const { title, description, fineAmount, isActive } = req.body;
+        // const userId = req.userId;
+        const userId = "65a657bbe0e059a24c54c031";
+        const { title, description, fineAmount } = req.body;
+        if(!title || !description || !fineAmount || !userId) {
+            return res.status(400).send("Some data is missing!");
+        }
 
         try {
-            const newFine = new Fine({title, description,  fineAmount,   isPayed});
 
-            const savedFine = await newFine.save();
-            res.status(201).json(savedFine);
+            const newFine = await FineModel.createFine(title, description,  fineAmount, userId);
+            res.status(201).send(newFine);
         } catch (error) {
             console.error("Error creating fine:", error);
             res.status(500).send("Internal Server Error");
@@ -29,14 +34,14 @@ class FineController {
     }
 
     static async payFine(req, res) {
-        const { id } = req.params;
+        const { id } = req.body;
         try {
-            const fine = await Fine.findById(id);
+            const fine = await FineModel.payFine(id);
+            console.log(fine);
 
             if (!fine) {
                 return res.status(404).json({ message: "Fine not found" });
             }
-            fine.isActive = false;
 
             const updatedFine = await fine.save();
             res.json(updatedFine);
