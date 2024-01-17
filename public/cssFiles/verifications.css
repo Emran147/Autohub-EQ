@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F7F7F7;
+  }
+  .search-bar {
+    padding: 10px;
+    text-align: center;
+  }
+  .search-bar input {
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .card {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 10px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .verify-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .reject-button {
+    background-color: #F44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .reject-reason {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: 600px) {
+    .card-container {
+        width: 100%;
+        padding: 10px;
+    }
+    .card {
+        width: auto;
+    }
+    .search-bar input {
+        width: 90%;
+    }
+    .buttons {
+        flex-direction: column;
+    }
+    .verify-button, .reject-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+  }
