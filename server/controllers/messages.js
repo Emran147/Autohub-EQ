@@ -1,13 +1,16 @@
 const MessagesModel = require("../models/messages");
 const UserModel = require("../models/user");
+const SettingsModel = require("../models/settings");
+const NodeMailerManager = require("../services/nodeMailer")
+const TwilioMessagesManager = require("../services/twilioMsgs")
 
 class MessagesController {
     static async getMessagesByLanguage(req, res) {
         const userId = req.userId;
         try {
+            console.log(userId);
             const language = await UserModel.getLanguageById(userId);
             const messages = await MessagesModel.getMessagesByLanguage(language);
-            console.log(language)
             res.json(messages);
         } catch (error) {
             console.error("Error fetching messages:", error);
@@ -20,14 +23,34 @@ class MessagesController {
         const { licenseNumber, msg_id } = req.body;
 
         try {
-            const { email, phoneNumber } = await UserModel.getUserEmailAndPhoneNumber(userId);
-            console.log(`Email: ${email}, Phone Number: ${phoneNumber}, Message: ${message}`);
+            const user = await UserModel.getUserById(userId);
+            const { email, phoneNumber, language } = user;
+            const { allowSMSNotifications, allowWhatsappNotifications, 
+                allowEmailNotifications} = await SettingsModel.getSettingsByUserId(user._id);
+            const message = await MessagesModel.getMessageById(msg_id, language);
+
+            console.log(allowSMSNotifications, allowWhatsappNotifications, 
+                allowEmailNotifications, user._id)
+            if(allowEmailNotifications) {
+                console.log("email")
+                NodeMailerManager.sendEmail(email, message);
+            }
+            if(allowWhatsappNotifications) {
+                console.log("wassap")
+                TwilioMessagesManager.sendWhatsapp(phoneNumber, message);
+            }
+            if(allowSMSNotifications) {
+                console.log("sms")
+                TwilioMessagesManager.sendSMS(phoneNumber, message);
+            }
+
             res.send("Message sent successfully");
         } catch (error) {
             console.error("Error sending message:", error.message);
             res.status(500).send("Internal Server Error");
         }
     }
+
 }
 
 module.exports = MessagesController;

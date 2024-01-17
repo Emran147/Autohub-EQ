@@ -7,7 +7,7 @@ const { serialize } = require("cookie");
 
 class AuthController {
     static async test(req, res) {
-        req.body = {email: "john.doe@example.com", password: "1234"}
+        req.body = {email: "jaafariramadan@gmail.com", password: "1234"}
         AuthController.login(req, res);
     }
 

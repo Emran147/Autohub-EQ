@@ -28,6 +28,4 @@ class NodeMailerManager {
     }
 }
 
-NodeMailerManager.sendEmail("jaafariramadan@gmail.com", "Nodemailer Test" , "1234");
-
 module.exports = NodeMailerManager;

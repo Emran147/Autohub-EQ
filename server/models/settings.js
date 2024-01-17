@@ -4,7 +4,6 @@ const Setting = require("../db/schemas/settings");
 
 class SettingsModel {
     static getSettingsByUserId(userId) {
-        console.log(userId)
         return Setting.findOne({owner: userId});
     }
 

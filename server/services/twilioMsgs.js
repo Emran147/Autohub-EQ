@@ -13,7 +13,8 @@ class TwilioMessagesManager {
           to: phoneNumber, // Text your number
           from: TWILIO_PHONE_NUMBER, // From a valid Twilio number
         })
-        .then((message) => console.log("SMS Message sent with id:", message.sid));
+        .then((message) => console.log("SMS Message sent with id:", message.sid))
+        .catch((err) => console.log("Failed to send SMS:", err));
     }
 
     sendWhatsapp(phoneNumber, message) {
@@ -24,6 +25,7 @@ class TwilioMessagesManager {
             to: "whatsapp:" + phoneNumber
         })
         .then(message => console.log("Whatsapp Message sent with id:", message.sid))
+        .catch((err) => console.log("Failed to send SMS:", err));
     }
 }
 

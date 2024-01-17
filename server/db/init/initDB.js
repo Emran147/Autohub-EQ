@@ -29,7 +29,7 @@ async function initUserAndVehicleDocs() {
             user.fullName = user.firstName + " " + user.lastName;
             vehicles.push(new Vehicle(vehicle));
         }
-        const userSettings = new Settings();
+        const userSettings = new Settings({allowSMSNotifications: true, allowWhatsappNotifications: true, allowEmailNotifications: true});
         
         user.vehicles = vehicles;
         user.settings = userSettings;

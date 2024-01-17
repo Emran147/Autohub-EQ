@@ -11,6 +11,11 @@ class MessagesModel {
             }
         })
     }
+
+    static async getMessageById(messageId, language) {
+        const msg = await Message.findById(messageId);
+        return msg.languages[language]
+    }
 }
 
 module.exports = MessagesModel;
