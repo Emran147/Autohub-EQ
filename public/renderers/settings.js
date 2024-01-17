@@ -1,13 +1,13 @@
 class SettingsRender {
     constructor() {
-        this.settingsComponent = new Component(templates.SETTINGS, containers.SETTINGS_CONTAINER);
+        this.settingsComponent = new Component(templates.SETTINGS, containers.SETTINGS);
     }
 
     renderSettings(settings) {
-        this.settingsComponent.render( settings, true);
+        const settingsArray = Object.entries(settings).map(([key, value]) => ({ key, value }));
+        this.settingsComponent.render( settingsArray , true);
     }
+
     rendererVehicleApprovalsError() {
-
     }
-
 }

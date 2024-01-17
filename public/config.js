@@ -4,6 +4,11 @@ const baseApiRoutes = {
     MESSAGELIST : "/api/messageList/",
     SENDMESSAGE : "/api/sendMessage/",
     GETSETTINGS : "/api/settings/",
+    UPDATESETTINGS : "/api/settings/",
+    GETPROFILEDETAILS :  "/api/profile/",
+    UPDATEEMAIL : "/api/email",
+    UPDATEPHONENUMBER : "/api/phoneNumber",
+    GETVEHICLES : "api/vehicles"
 }
 
 const templates = {
@@ -13,6 +18,7 @@ const templates = {
     VEHICLE_FOUND: "#vehicleFound-template" ,
     MESSAGE_LIST : "#messageList-template" , 
     SETTINGS : "#settings-template",
+    VEHICLES_LIST : "#vehicles-template"
 }
 
 const containers = {
@@ -21,5 +27,6 @@ const containers = {
     SEARCH_VEHICLE: "#container",
     VEHICLE_FOUND: "#vehicleFound",
     MESSAGE_LIST:"#container",
-    SETTINGS : "#settingContainer"
+    SETTINGS : "#settingContainer",
+    VEHICLES_LIST : "#vehiclesContainer"
 }
