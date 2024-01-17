@@ -16,16 +16,21 @@ class VehicleModel {
         return  Vehicle.find({ owner: userId });
     } 
 
-    static updateVehicleForSaleById(vehicleId, forsale) {
-        return Vehicle.findByIdAndUpdate( vehicleId,{ $set: { forsale } });
+    static updateVehicleDataById(vehicleId, data) {
+        return Vehicle.findByIdAndUpdate( vehicleId,{ $set: data }, {new: true});
+
     }
 
-    static updateShareVehicleDetailsById(vehicleId, shareDetails) {
-        return Vehicle.findByIdAndUpdate( vehicleId,{ $set: { shareDetails } });
+    static updateVehicleForSaleById(vehicleId, forsale) {
+        return VehicleModel.updateVehicleDataById(vehicleId, {forsale});
+    }
+
+    static updateVehicleShareDetailsById(vehicleId, shareDetails) {
+        return VehicleModel.updateVehicleDataById(vehicleId, {shareDetails});
     }
 
     static updateVehicleDetailsById(vehicleId, updatedDetails) {
-        return Vehicle.findByIdAndUpdate(vehicleId,{ $set: {...updatedDetails}});
+        return VehicleModel.updateVehicleDataById(vehicleId, updatedDetails);
     }
 
     static  deleteVehicleById(vehicleId) {
