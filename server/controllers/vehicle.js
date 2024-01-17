@@ -25,6 +25,7 @@ class VehicleController {
         }
         res.send(responseData);
     }
+
     static async getUserVehicles(req, res) {
         const  userId  = req. userId;
         try {
@@ -35,8 +36,9 @@ class VehicleController {
             res.status(500).send("Internal Server Error");
         }
     }
-    static async patchUpdateVehicleForSale(req, res) {
-        const { forsale,vehicleId } = req.body;
+
+    static async updateVehicleForsale(req, res) {
+        const { forsale, vehicleId } = req.body;
         try {
             const updatedVehicle = await VehicleModel.updateVehicleForSaleById(vehicleId, forsale);
             if (!updatedVehicle) {
@@ -48,7 +50,7 @@ class VehicleController {
             res.status(500).send("Internal Server Error");
         }
     }
-    static async patchUpdateVehicleDetails(req, res) {
+    static async updateVehicleDetails(req, res) {
         const { vehicleId, model, year, note, manufacturer } = req.body;
         const updatedDetails = {model, year, note, manufacturer};
         try {
