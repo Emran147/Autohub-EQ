@@ -5,6 +5,11 @@ class UserModel {
         return User.findById(_id);
     }
 
+    static async getLanguageById(userId) {
+        const user = await User.findById(userId, {language: 1});
+        return user.language;
+    }
+
     static createUser(email, phoneNumber, fullName, language, hashedPassword) {
         return User.create({
             email, phoneNumber, fullName, language, hashedPassword

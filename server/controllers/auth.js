@@ -59,7 +59,7 @@ class AuthController {
         const token = req.cookies.token;
         try {
             const {user_id, language} = jwt.verify(token, JWT_SECRET_KEY);
-            req.user_id = user_id;
+            req.userId = user_id;
             req.language = language;
             next();
         }
