@@ -9,6 +9,7 @@ const authRouter = require("./server/routes/auth");
 const vehicleRouter = require("./server/routes/vehicle");
 const messagesRouter = require("./server/routes/messages");
 const profileRouter = require("./server/routes/profile");
+const settingsRouter = require("./server/routes/settings")
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use("/api/auth", authRouter);
 
 app.use("/api/vehicle", vehicleRouter);
 app.use("/api/messages", messagesRouter);
+app.use("/api/settings", settingsRouter);
 
 
 async function main() {
