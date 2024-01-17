@@ -4,7 +4,7 @@ class VehicleApiManager {
     }
 
     // gets the curren user's vehicles
-    static getMyVehicles() {
+    static getUserVehicles() {
         return $.get(baseApiRoutes.VEHICLE)
     }
 
@@ -32,7 +32,7 @@ class VehicleApiManager {
         })
     }
 
-    static deleteVehicle() {
+    static deleteVehicle(vehicleId) {
         return $.ajax({
             type: "DELETE",
             url: baseApiRoutes.VEHICLE,
