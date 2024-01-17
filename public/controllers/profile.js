@@ -3,6 +3,7 @@ class Profile {
         this.ProfileModel = new ProfileModel()
         this.ProfileRender = new ProfileRender()
     }
+
     async getEmailAndPhonNumber() {
         try {
             await this.ProfileModel.getEmailAndPhonNumber();
@@ -15,15 +16,10 @@ class Profile {
     }
 
 
-    async updateUserDetails() {
-        const emailValue = document.getElementById('emailInput').value;
-        const phoneNumberValue = document.getElementById('phoneNumberInput').value;
-        const profileDetailsObj = {
-            email : emailValue ,
-            phoneNumber : phoneNumberValue
-        }
+    async updateEmail(email) {
+        
         try {
-            await this.ProfileModel.updateUserDetails(profileDetailsObj);
+            await this.ProfileModel.updateEmail({email});
             const profileDetails = this.ProfileModel.profileDetails;
             this.ProfileRender.renderProfileDetails(profileDetails)
         }
@@ -32,14 +28,11 @@ class Profile {
         }
     }
 
-    async updateEmail() {
-        const emailValue = document.getElementById('emailInput').value;
-        const phoneNumberValue = document.getElementById('phoneNumberInput').value;
-        const emailObj = {
-            email : emailValue ,
-        }
+
+    async updatePhoneNumber(phoneNumber) {
+        
         try {
-            await this.ProfileModel.updateEmail(emailObj);
+            await this.ProfileModel.updatePhoneNumber({phoneNumber});
             const profileDetails = this.ProfileModel.profileDetails;
             this.ProfileRender.renderProfileDetails(profileDetails)
         }
@@ -47,6 +40,28 @@ class Profile {
             console.log(err);
         }
     }
+
+    async toggleEdit(field) {
+        var isEditMode = document.getElementById(field + "Input").style.display === "none";
+        var buttonText = isEditMode ? "Save" : "Edit";
+    
+        document.getElementById(field + "Text").style.display = isEditMode ? "none" : "block";
+        document.getElementById(field + "Input").style.display = isEditMode ? "block" : "none";
+    
+        event.target.textContent = buttonText;
+    
+        if (!isEditMode) {
+            var updatedValue = document.getElementById(field + "Input").value;
+            if (field === 'email') {
+                console.log("Saving Email:", updatedValue);
+                await this.updateEmail(updatedValue);
+            } else if (field === 'phone') {
+                console.log("Saving Phone Number:", updatedValue);
+                profile.updatePhoneNumber(updatedValue);
+            }
+        }
+    }
+    
 
 
 }

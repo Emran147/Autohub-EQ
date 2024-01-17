@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cssFiles/profile.css">
     <title>Document</title>
 </head>
 <body>
     Profile  page
     <script id="userProfile-template" type="text/x-handlebars-template">
-        <label>Email:</label>
-        <input type="email" id="emailInput" value="{{data.email}}">
-        <button id="saveButton" onclick="profile.updateUserDetails()"> Save </button>
-        <br>
-        <label>Phone Number:</label>
-        <input type="tel" id="phoneNumberInput" value="{{data.phoneNumber}}">
+        <div>
+            <label>Email:</label>
+            <span id="emailText">{{data.email}}</span>
+            <input type="email" id="emailInput" value="{{data.email}}" style="display: none;">
+            <button onclick="profile.toggleEdit('email')">Edit</button>
+        </div>
+        <div>
+            <label>Phone Number:</label>
+            <span id="phoneNumberText">{{data.phoneNumber}}</span>
+            <input type="tel" id="phoneNumberInput" value="{{data.phoneNumber}}" style="display: none;">
+            <button onclick="profile.toggleEdit('phoneNumber')">Edit</button>
+        </div>
     </script>
+    
     
     
     <div id="userProfile"></div>

@@ -11,10 +11,16 @@ class ProfileApiManager {
         // For the sake of simplicity, returning static data
         return this.damydata;
     }
-    async updateUserDetails() {
+    async updateEmail() {
         // Example using $.get (make sure jQuery is loaded)
-        // return $.post(baseApiRoutes.UPDATEUSERDETAILS );
+        // return $.post(baseApiRoutes.UPDATEEMAIL );
         // For the sake of simplicity, returning static data
-        return this.damydata;
+        return this.damydata.email;
+    }
+    async updatePhonenNumber() {
+        // Example using $.get (make sure jQuery is loaded)
+        // return $.post(baseApiRoutes.UPDATEPHONENUMBER );
+        // For the sake of simplicity, returning static data
+        return this.damydata.phoneNumber;
     }
 }
