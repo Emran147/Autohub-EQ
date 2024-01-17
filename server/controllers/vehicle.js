@@ -18,9 +18,10 @@ class VehicleController {
             responseData.user = {phoneNumber: user.phoneNumber, email: user.email};
         }
 
+        console.log(vehicle)
         if(vehicle.shareDetails) {
             responseData.vehicle = { ...responseData.vehicle,
-                manufacturer: vehicle.manufacturer, model: vehicle.model, year: vehicle.year, note: vehicle.note
+                shareDetails: vehicle.shareDetails, manufacturer: vehicle.manufacturer, model: vehicle.model, year: vehicle.year, note: vehicle.note
             }
         }
         res.send(responseData);

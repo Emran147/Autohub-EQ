@@ -32,11 +32,13 @@
     <script id="vehicleFound-template" type="text/x-handlebars-template">
         <div id="vehicleDetails">
             <p>{{ vehicle.licenseNumber }}</p>
-            {{#if shareDetails}}
-                <p>{{ vehicle.make }}</p>
+            {{#if vehicle.shareDetails}}
                 <p>{{ vehicle.manufacturer }}</p>
                 <p>{{ vehicle.model }}</p>
                 <p>{{ vehicle.year }}</p>
+                {{#if vehicle.note}}
+                    <p>{{note}}</p>
+                {{/if}}
             {{/if}}
             {{#if user.email}}
                 {{ user.phoneNumber }}

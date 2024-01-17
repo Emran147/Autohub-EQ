@@ -27,9 +27,11 @@ async function initUserAndVehicleDocs() {
         const vehicles = []
         for(const vehicle of user.vehicles){
             user.fullName = user.firstName + " " + user.lastName;
+            vehicle.shareDetails = true;
             vehicles.push(new Vehicle(vehicle));
         }
-        const userSettings = new Settings({allowSMSNotifications: true, allowWhatsappNotifications: true, allowEmailNotifications: true});
+        console.log(vehicles.map(v => v.shareDetails));
+        const userSettings = new Settings({ allowSMSNotifications: true, allowWhatsappNotifications: true, allowEmailNotifications: true, shareContacts: true });
         
         user.vehicles = vehicles;
         user.settings = userSettings;
