@@ -1,4 +1,6 @@
-const FinesModel = require("../models/fine");
+
+// Fine.js/Controllers
+const FineModel = require("../models/fine");
 
 class FineController {
     static async getUserFines(req, res) {
@@ -16,7 +18,7 @@ class FineController {
         const { title, description, fineAmount, isActive } = req.body;
 
         try {
-            const newFine = new Fine({title, description,  fineAmount,  isActive});
+            const newFine = new Fine({title, description,  fineAmount,   isPayed});
 
             const savedFine = await newFine.save();
             res.status(201).json(savedFine);
@@ -28,7 +30,6 @@ class FineController {
 
     static async payFine(req, res) {
         const { id } = req.params;
-
         try {
             const fine = await Fine.findById(id);
 
