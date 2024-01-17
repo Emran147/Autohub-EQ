@@ -1,53 +1,93 @@
 .search-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    align-items: center;
-    padding: 20px;
-  }
+  display: grid;
+  grid-template-rows: 1fr auto; /* Adjusted for content and icon bar */
+  height: 100vh; /* Full viewport height */
+  padding: 20px;
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: start; /* Align the start of the content to the top */
+}
+
+.search-box {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.631);
+  justify-self: center; /* Center the box horizontally */
+}
+
+#searchInput {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#searchButton {
+  background-color: #0E275A;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-top: 20px;
+  width: 200px;
+  justify-self: center; /* Center the button */
+}
+
+.icon-bar {
+  position: fixed; /* Fixed to the bottom of the viewport */
+  bottom: 0; /* At the bottom */
+  left: 0; /* Span the full width of the screen */
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust based on the number of icons */
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  margin-left: 30%;
+  cursor: pointer;
+}
+
+#licensNumber {
+  margin-left: 27%;
+}
+
+/* Responsive styles for screens narrower than 600px */
+@media screen and (max-width: 600px) {
   .search-box {
-    width: 100%;
-    max-width: 400px;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin-bottom: 30px;
-    height: 400px;
+    width: 90%;
+    height: fit-content;
+    padding: 15px;
   }
+
   #searchInput {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+    width: calc(100% - 10px);
+    font-size: 14px;
   }
+
   #searchButton {
-    background-color: #0E275A;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
     width: 100%;
-    border-radius:50px;
-    margin-top: 20px;
-    width: 200px;
-    margin-left: 105px;
   }
+
   .icon-bar {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 300px;
-    margin-top: 150px;
-    margin-left: 60px;
+    max-width: none; /* Full width on smaller screens */
   }
-  .icon-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
+
+  #licensNumber {
+    margin-left: 10%;
   }
+}

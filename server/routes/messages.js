@@ -5,7 +5,7 @@ const { authorizationMiddleWare } = require("../controllers/auth");
 const router = Router();
 router.use(authorizationMiddleWare);
 
-router.get("/:language", MessagesController.getMessagesByLanguage);
+router.get("/", MessagesController.getMessagesByLanguage);
 router.post("/send", MessagesController.sendMessage)
 
 module.exports = router;

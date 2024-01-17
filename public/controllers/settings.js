@@ -6,10 +6,8 @@ class Settings {
 
     async getSettings() {
         try {
-            console.log(' iam here ')
             await this.SettingsModel.getSettings();
             const settings = this.SettingsModel.settings;
-            window.location.href = "../porifle.html";
             this.SettingsRender.renderSettings(settings)
         }
         catch(err) {
@@ -17,12 +15,25 @@ class Settings {
         }
     }
 
-    async updateSettings() {
+     getCheckboxValues() {
+        const checkboxes = document.querySelectorAll('.settings-checkbox');
+        let settings = {};
+        checkboxes.forEach(checkbox => {
+            console.log(checkbox.name, checkbox.checked)
+            settings[checkbox.name] = checkbox.checked;
+        });
+        return settings;
+    }
+    
 
+    async updateSettings() {
+        const settings = this.getCheckboxValues();
+        console.log('the data that i send ' , settings)
         try {
-            await this.SettingsModel.getSettings();
-            const settings = this.SettingsModel.settings;
-            console.log(settings)
+            await this.SettingsModel.updateSettings(settings);
+            const settingsAfterUpdate = this.SettingsModel.settings;
+            console.log("TEST", settingsAfterUpdate)
+            this.SettingsRender.renderSettings(settingsAfterUpdate)
         }
         catch(err) {
             console.log(err);
@@ -32,5 +43,5 @@ class Settings {
 
 
 }
-
 const settings = new Settings();
+settings.getSettings()

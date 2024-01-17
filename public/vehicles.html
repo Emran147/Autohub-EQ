@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Vehicles  page
+
+    <script id="vehicles-template" type="text/x-handlebars-template">
+     vehicles template
+     <Br>
+        {{#each data}}
+        vehicle License  {{this.LicenseNumber}}
+     <Br>
+         vehicle Year  {{this.year}}
+       <br>
+       <button onclick="vehicles.deleteVehicle()">Delete Vehicle</button>  
+        {{/each}}
+
+    </script>
+    <script id="addingVehicle-template" type="text/x-handlebars-template">
+       adding  vehicles template
+       </script>
+    
+      <div id="vehiclesContainer"></div>
+</body>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+        <script src="config.js"></script>
+        <script src="./renderers/component.js"></script>
+        <script src="./renderers/vehicles.js"></script>
+        <script src="./apiManagers/vehiclesApiManager.js"></script>
+        <script src="./models/vehicles.js"></script>
+        <script src="./controllers/vehicles.js"></script>
+</html>

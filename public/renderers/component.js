@@ -1,6 +1,5 @@
 class Component {
     constructor(TEMPLATE_SELECTOR, CONTAINER_SELECTOR) {
-        console.log((templates.SETTINGS, $(templates.SETTINGS).html))
         this.template = Handlebars.compile($(TEMPLATE_SELECTOR).html()); 
         this.container = $(CONTAINER_SELECTOR);
         
@@ -10,7 +9,7 @@ class Component {
         if (empty) {
             this.clear();
         }
-        const html = this.template({ data : data});
+        const html = this.template(data);
         this.container.append(html);
     }
     clear() {

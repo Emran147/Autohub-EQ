@@ -1,11 +1,9 @@
 class searchVehicleModel {
     constructor() {
-        this.vehicle = {};
-        this.searchVehicleAPI = new searchVehicleAPI();
+        this.vehicleData = {};
     }
 
     async getVehicle(licenseNumber) {
-        this.vehicle = await this.searchVehicleAPI.getVehicle(licenseNumber);
-
+        this.vehicleData = await VehicleApiManager.getVehicleByLicenseNumber(licenseNumber);
     }
 }

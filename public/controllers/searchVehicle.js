@@ -19,14 +19,15 @@ class SearchVehicle {
     
         try {
             await this.searchVehicleModel.getVehicle(carLicenseNumber);
-            const vehicle = this.searchVehicleModel.vehicle;
-    
-            if (jQuery.isEmptyObject(vehicle)) { 
+            const vehicleData = this.searchVehicleModel.vehicleData;
+            console.log(vehicleData)
+
+            if (jQuery.isEmptyObject(vehicleData)) { 
                 alert('Vehicle not found');
                 return;
             }
     
-            this.searchVehicleRender.rendererVehicle(vehicle);
+            this.searchVehicleRender.rendererVehicle(vehicleData);
     
         } catch (err) {
             console.error(err);

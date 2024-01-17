@@ -1,5 +1,16 @@
 module.exports = [
     {
+        firstName: 'Ramadan',
+        lastName: 'Jaafari',
+        phoneNumber: '+972548064966',
+        email: 'jaafariramadan@gmail.com',
+        language: 'arabic',
+        vehicles: [
+            { manufacturer: 'Toyota', model: 'Camry', year: 2022, licenseNumber: 'ABC123' },
+            { manufacturer: 'Honda', model: 'Accord', year: 2021, licenseNumber: 'XYZ789' },
+        ],
+    },
+    {
         firstName: 'John',
         lastName: 'Doe',
         phoneNumber: '123-456-7890',

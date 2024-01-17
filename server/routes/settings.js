@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const SettingsController = require("../controllers/SettingsController"); 
+const SettingsController = require("../controllers/settings"); 
 const { authorizationMiddleWare } = require("../controllers/auth");
 
 const router = Router();

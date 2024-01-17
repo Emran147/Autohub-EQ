@@ -8,7 +8,6 @@ class VehicleApprovalsModel {
     static getVehicleApprovalById(_id) {
         return VehicleApproval.findById(_id);
     }
-    
 }
     
 
