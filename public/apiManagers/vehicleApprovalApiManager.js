@@ -3,8 +3,9 @@ class VehicleApprovalApiManager {
         return $.get(baseApiRoutes.VEHICLE_APPROVALS);
     }
 
-    static sendVehicleApprovalRequest(licenseNumber, UserID) {
-        return $.post(baseApiRoutes.VEHICLE_APPROVALS, {licenseNumber, UserID});
+    static sendVehicleApprovalRequest(licenseNumber, userID) {
+        console.log(licenseNumber, userID)
+        return $.post(baseApiRoutes.VEHICLE_APPROVALS, {licenseNumber, userID});
     }
 
     static resoleVehicleApproval(approve, msg) {

@@ -8,36 +8,29 @@
 </head>
 <body>
     <img src="./assests/5e405f8e-71a4-4683-b49b-127f6b8c169d.jpg" alt="Your Logo" class="logo">
-    <div id="vehiclesContainer" class="car-list-container">
         
     </div>
-
-
         <div class="verification-container">
             <p>In our application, we care about providing a service full of credibility, so we ask our customers to send a photo of their ID and a photo of their car license.</p>
             <div class="upload-section">
                 <div class="upload-field">
                     <label  class="sub-title" for="idNumber">ID NUMBER</label>
-                    <input type="text" id="idNumber" name="idNumber">
+                    <input id="userID" type="text" id="idNumber" name="idNumber">
                 </div>
                 <div class="upload-field">
-                    <label class="sub-title" for="carLicense">Car License</label>
-                    <input type="text" id="carLicense" name="carLicense">
+                    <label class="sub-title" for="carLicense">Vehicle License</label>
+                    <input id="licenseNumber" type="text" id="carLicense" name="carLicense">
                 </div>
             </div>
             <p class="verification-notice">This information will be deleted once verified</p>
-            <button class="done-button">I am Done</button>
+            <button class="done-button" onclick="newVehicleController.sendVehicleApprovalRequest()">I am Done</button>
         </div>
 
-
-
-</body>
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
         <script src="config.js"></script>
-        <script src="./renderers/component.js"></script>
-        <script src="./renderers/vehicles.js"></script>
-        <script src="./apiManagers/vehicleApiManager.js"></script>
-        <script src="./models/vehicles.js"></script>
-        <script src="./controllers/vehicles.js"></script>
+        <script src="./apiManagers/vehicleApprovalApiManager.js"></script>
+        <script src="./models/newVehicle.js"></script>
+        <script src="./controllers/newVehicle.js"></script>
+</body>
 </html>
