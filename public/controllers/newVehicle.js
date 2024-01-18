@@ -4,9 +4,9 @@ class NewVehicleController {
     }
 
     sendVehicleApprovalRequest() {
-        const userID = $("#userID").val();
+        const userIDNumber = $("#userID").val();
         const licenseNumber = $("#licenseNumber").val();
-        this.newVehicleModel.sendVehicleApprovalRequest(licenseNumber, userID);
+        this.newVehicleModel.sendVehicleApprovalRequest(licenseNumber, userIDNumber);
     }
 }
 

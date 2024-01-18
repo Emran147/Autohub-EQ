@@ -1,5 +1,4 @@
 const UserModel = require("../models/user");
-const VehicleModel = require("../models/vehicle");
 const VehicleApprovalsModel = require("../models/vehicleApproval");
 
 class VehicleApprovalController { 
@@ -16,6 +15,20 @@ class VehicleApprovalController {
             console.error("Error fetching vehicle approvals:", error);
             res.status(500).send("Internal Server Error");
         }
+    }
+
+    static async requestVehicleApproval(req, res) {
+        const user = req.userId;
+        const { licenseNumber, userIDNumber } = req.body;
+        try {
+            console.log(user, licenseNumber, userIDNumber);
+            await VehicleApprovalsModel.createVehicleApproval(user, licenseNumber, userIDNumber);
+            res.send("Request Submitted Successfully!")
+        } 
+        catch (error) {
+            console.error("Error resolving vehicle approval:", error);
+            res.status(500).send("Internal Server Error");
+    }
     }
 
     static async resolveVehicleApproval(req, res) {

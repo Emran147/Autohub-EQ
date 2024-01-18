@@ -8,6 +8,11 @@ class VehicleApprovalsModel {
     static getVehicleApprovalById(_id) {
         return VehicleApproval.findById(_id);
     }
+
+    static createVehicleApproval(user, licenseNumber, userIDNumber) {
+        console.log(user, licenseNumber, userIDNumber)
+        return VehicleApproval.create({user, licenseNumber, userIDNumber});
+    }
 }
     
 

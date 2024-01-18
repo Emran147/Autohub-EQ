@@ -2,7 +2,7 @@ class NewVehicleModel {
     constructor() {
     }
 
-    sendVehicleApprovalRequest(licenseNumber, userID) {
-        VehicleApprovalApiManager.sendVehicleApprovalRequest(licenseNumber, userID);
+    sendVehicleApprovalRequest(licenseNumber, userIDNumber) {
+        VehicleApprovalApiManager.sendVehicleApprovalRequest(licenseNumber, userIDNumber);
     }
 }
