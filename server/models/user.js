@@ -11,7 +11,7 @@ class UserModel {
     }
 
     static createUser(email, phoneNumber, fullName, language, hashedPassword) {
-        const globalPhoneNumber = this.#processPhoneNumber(phoneNumber);
+        const globalPhoneNumber = UserModel.#processPhoneNumber(phoneNumber);
         const user = new User({
             email, phoneNumber: globalPhoneNumber, fullName, language, hashedPassword
         });
@@ -58,7 +58,7 @@ class UserModel {
         return user.admin;
     }
 
-    #processPhoneNumber(phoneNumber) {
+    static #processPhoneNumber(phoneNumber) {
         if(phoneNumber.length === 10 && phoneNumber[0] === "0" && phoneNumber[1] === "5") {
             return "+972" + phoneNumber.slice(1);
         }
