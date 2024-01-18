@@ -42,7 +42,6 @@ class UserModel {
     }
 
     static updateEmail(_id, newEmail) {
-        console.log(_id, newEmail)
         return User.findByIdAndUpdate(_id, {$set: {email: newEmail}}, {new: true});
     }
     
@@ -50,8 +49,8 @@ class UserModel {
        return User.findByIdAndUpdate(_id, { $set: { phoneNumber: newPhoneNumber }}, {new: true});
     }
  
-    static addVehicleById(userId, vehicleId) {
-        return User.findOneAndUpdate({ _id: userId },{ $addToSet: { vehicles: vehicleId }});
+    static addVehicleById(userId, vehicle) {
+        return User.findOneAndUpdate({ _id: userId },{ $addToSet: { vehicles: vehicle }});
     }
 
     static async isAdminById(_id) {

@@ -7,5 +7,6 @@ router.use(authorizationMiddleWare);
 
 router.get("/", VehicleApprovalController.getAllVehicleApprovals);
 router.post("/", VehicleApprovalController.requestVehicleApproval);
+router.post("/resolve", VehicleApprovalController.resolveVehicleApproval);
 
 module.exports = router;

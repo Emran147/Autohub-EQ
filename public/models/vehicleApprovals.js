@@ -7,7 +7,7 @@ class VehicleApprovalModel {
         this.vehicleApprovals = await VehicleApprovalApiManager.getVehicleApprovals();
     }
 
-    async resoleVehicleApproval(vehicleApprovalId, approve, msg) {
-        VehicleApprovalApiManager.resoleVehicleApproval(vehicleApprovalId, approve, msg);
+    resoleVehicleApproval(vehicleApprovalId, approve, msg) {
+        return VehicleApprovalApiManager.resoleVehicleApproval(vehicleApprovalId, approve, msg);
     }
 }

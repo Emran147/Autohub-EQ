@@ -4,7 +4,6 @@ class VehiclesRender {
     }
 
     renderVehicles(vehicles) {
-        console.log(vehicles)
         this.vehiclesComponent.render( {vehicles} , true);
     }
 

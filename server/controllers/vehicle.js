@@ -23,7 +23,6 @@ class VehicleController {
             responseData.user = {phoneNumber: user.phoneNumber, email: user.email};
         }
 
-        console.log(vehicle)
         if(vehicle.shareDetails) {
             responseData.vehicle = { ...responseData.vehicle,
                 shareDetails: vehicle.shareDetails, manufacturer: vehicle.manufacturer, model: vehicle.model, year: vehicle.year, note: vehicle.note
@@ -46,7 +45,6 @@ class VehicleController {
     static async updateVehicleForsale(req, res) {
         const { forsale, vehicleId } = req.body;
         try {
-            console.log(forsale, vehicleId);
             const updatedVehicle = await VehicleModel.updateVehicleForSaleById(vehicleId, forsale);
             if (!updatedVehicle) {
                 return res.status(404).json({ message: "Vehicle not found" });
@@ -61,7 +59,6 @@ class VehicleController {
     static async updateVehicleShareDetails(req, res) {
         const { shareDetails, vehicleId } = req.body;
         try {
-            console.log(shareDetails, vehicleId);
             const updatedVehicle = await VehicleModel.updateVehicleShareDetailsById(vehicleId, shareDetails);
             if (!updatedVehicle) {
                 return res.status(404).json({ message: "Vehicle not found" });
@@ -92,7 +89,6 @@ class VehicleController {
         const { vehicleId } = req.body;
         try {
             const deletedVehicle = await VehicleModel.deleteVehicleById(vehicleId);
-            console.log(deletedVehicle);
             if (!deletedVehicle) {
                 return res.status(404).json({ message: "Vehicle not found" });
             }

@@ -37,7 +37,6 @@ class FineController {
         const { id } = req.body;
         try {
             const fine = await FineModel.payFine(id);
-            console.log(fine);
 
             if (!fine) {
                 return res.status(404).json({ message: "Fine not found" });

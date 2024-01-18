@@ -1,4 +1,5 @@
 const Vehicle = require("../db/schemas/vehicle");
+const UserModel = require("./user")
 
 class VehicleModel {
     static getVehicleByLicenseNumber(licenseNumber) {
@@ -37,8 +38,16 @@ class VehicleModel {
         return Vehicle.findByIdAndDelete(vehicleId); 
     }
 
-    static createVehicle(licenseNumber, user) {
-        return Vehicle.create({licenseNumber, owner: user});
+    static createVehicle(licenseNumber, owner) {
+        const vehicle = new Vehicle({ licenseNumber, owner });
+        UserModel.addVehicleById(owner, vehicle);
+        vehicle.save();
+        return vehicle;
+    }
+
+    static async vehicleExistsByLicenseNumber(licenseNumber) {
+        const vehicle = await Vehicle.findOne({licenseNumber});
+        return vehicle ? true : false;
     }
 }
 

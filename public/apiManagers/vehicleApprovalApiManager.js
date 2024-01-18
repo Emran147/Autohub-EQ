@@ -8,6 +8,6 @@ class VehicleApprovalApiManager {
     }
 
     static resoleVehicleApproval(vehicleApprovalId, approve, msg) {
-        $.post(baseApiRoutes.VEHICLE_APPROVALS + "resolve", {vehicleApprovalId, approve, msg})
+        return $.post(baseApiRoutes.VEHICLE_APPROVALS + "resolve", {vehicleApprovalId, approve, msg})
     }
 }

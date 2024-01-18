@@ -90,7 +90,6 @@ class Vehicles {
             const year = updateDetailsBtn.siblings(".yearInput").val();
             const note = updateDetailsBtn.siblings(".noteInput").val();
 
-            console.log(vehicleId, manufacturer, model, year, note)
             controller.updateVehicleDetails(vehicleId, manufacturer, model, year, note)
         })
         vehiclesContainer.on("click", ".delete-car-button", function() {

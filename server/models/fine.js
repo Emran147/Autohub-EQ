@@ -29,7 +29,6 @@ async function test() {
     await FineModel.payFine(fine5._id);
 
     const fines = await FineModel.getFinesByUserId("65a657bbe0e059a24c54c031");
-    console.log(fines)
 
     await require("../db/dbConnect").dbDisconnect();
 }

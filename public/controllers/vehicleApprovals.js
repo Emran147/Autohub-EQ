@@ -15,9 +15,10 @@ class VehicleApprovalController {
         }
     }
 
-    async resoleVehicleApproval(vehicleApprovalId, approve, msg) {
+    async resoleVehicleApproval(vehicleApprovalId, approve, msg, card) {
         try {
             await this.vehicleApprovalModel.resoleVehicleApproval(vehicleApprovalId, approve, msg);
+            card.remove();
         } catch (err) {
             console.error(err);
         }
@@ -28,12 +29,14 @@ class VehicleApprovalController {
         const vehicleApprovals = $("#vehicleApprovals");
         vehicleApprovals.on("click", ".verify-button", function() {
             const vehicleApprovalId = $(this).data("id");
-            controller.resoleVehicleApproval(vehicleApprovalId, true)
+            const card = $(this).closest(".card");
+            controller.resoleVehicleApproval(vehicleApprovalId, true, "", card)
         })
         vehicleApprovals.on("click", ".reject-button", function() {
             const rejectionMsg = $(this).closest(".card").find(".reject-reason").val();
             const vehicleApprovalId = $(this).data("id");
-            controller.resoleVehicleApproval(vehicleApprovalId, false, rejectionMsg);
+            const card = $(this).closest(".card");
+            controller.resoleVehicleApproval(vehicleApprovalId, false, rejectionMsg, card);
         })
     }
 }

@@ -8,7 +8,6 @@ class MessagesController {
     static async getMessagesByLanguage(req, res) {
         const userId = req.userId;
         try {
-            console.log(userId);
             const language = await UserModel.getLanguageById(userId);
             const messages = await MessagesModel.getMessagesByLanguage(language);
             res.json(messages);
@@ -29,18 +28,13 @@ class MessagesController {
                 allowEmailNotifications} = await SettingsModel.getSettingsByUserId(user._id);
             const message = await MessagesModel.getMessageById(msg_id, language);
 
-            console.log(allowSMSNotifications, allowWhatsappNotifications, 
-                allowEmailNotifications, user._id)
             if(allowEmailNotifications) {
-                console.log("email")
                 NodeMailerManager.sendEmail(email, message);
             }
             if(allowWhatsappNotifications) {
-                console.log("wassap")
                 TwilioMessagesManager.sendWhatsapp(phoneNumber, message);
             }
             if(allowSMSNotifications) {
-                console.log("sms")
                 TwilioMessagesManager.sendSMS(phoneNumber, message);
             }
 

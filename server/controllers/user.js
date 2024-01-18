@@ -15,7 +15,6 @@ class UserController {
     static async updateEmail(req, res) {     
         const userId = req.userId; 
         const { email } = req.body;
-        console.log(req.body)
         try {
             const updatedUser = await UserModel.updateEmail(userId, email);
             if (!updatedUser) { 

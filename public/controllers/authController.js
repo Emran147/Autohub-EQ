@@ -18,8 +18,6 @@ class AuthController {
         const email = $('#loginEmail').val();
         const password = $('#loginPassword').val();
 
-        console.log(email, password)
-
         this.authModel.login(email, password)
             .then(response => {
                 window.location.href = 'index.html';

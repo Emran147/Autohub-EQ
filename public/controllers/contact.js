@@ -20,7 +20,6 @@ class Contact {
         const selectedMessageID = messageDropdown.value;
         const sharePhoneNumberCheckbox = document.querySelector('input[type="checkbox"][value="SharePhoneNumber"]');
         const isPhoneNumberShared = sharePhoneNumberCheckbox.checked;
-        console.log(searchVehicle.searchVehicleModel.vehicle);
         const carLicenseNumber = searchVehicle.searchVehicleModel.vehicleData.vehicle.licenseNumber;
         const message = {
             msg_id : selectedMessageID,

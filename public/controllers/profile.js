@@ -7,7 +7,6 @@ class Profile {
     async getEmailAndPhonNumber() {
         try {
             await this.profileModel.getEmailAndPhonNumber();
-            console.log(this.profileModel.profileDetails);
             const profileDetails = this.profileModel.profileDetails;
             this.profileRender.renderProfileDetails(profileDetails)
         }
@@ -33,7 +32,7 @@ class Profile {
     async updatePhoneNumber(phoneNumber) {
         
         try {
-            console.log("phooone")
+            ("phooone")
             await this.profileModel.updateUserPhoneNumber(phoneNumber);
             const profileDetails = this.profileModel.profileDetails;
             this.profileRender.renderProfileDetails(profileDetails)

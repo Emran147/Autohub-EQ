@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 require("./user");
 
 const vehicleSchema = new Schema({
-    licenseNumber: {type: String, required: true},
+    licenseNumber: {type: String, required: true, unique: true},
     forsale: {type: Boolean, required: true, default: false},
     shareDetails: {type: Boolean, required: true, default: false},
     manufacturer: {type: String},

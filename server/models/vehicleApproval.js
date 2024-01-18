@@ -10,12 +10,12 @@ class VehicleApprovalsModel {
     }
 
     static createVehicleApproval(user, licenseNumber, userIDNumber) {
-        console.log(user, licenseNumber, userIDNumber)
         return VehicleApproval.create({user, licenseNumber, userIDNumber});
+    }
+
+    static deleteVehicleApprovalById(id) {
+        return VehicleApproval.findByIdAndDelete(id).then();
     }
 }
     
-
-
-
 module.exports = VehicleApprovalsModel;

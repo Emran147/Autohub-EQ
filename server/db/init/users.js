@@ -6,8 +6,8 @@ module.exports = [
         email: 'jaafariramadan@gmail.com',
         language: 'arabic',
         vehicles: [
-            { manufacturer: 'Toyota', model: 'Camry', year: 2022, licenseNumber: 'ABC123' },
-            { manufacturer: 'Honda', model: 'Accord', year: 2021, licenseNumber: 'XYZ789' },
+            { manufacturer: 'Toyota', model: 'Camry', year: 2022, licenseNumber: 'ABC124' },
+            { manufacturer: 'Honda', model: 'Accord', year: 2021, licenseNumber: 'XYZ78S' },
         ],
     },
     {
@@ -146,7 +146,7 @@ module.exports = [
     {
         firstName: 'Sophia',
         lastName: 'Baker',
-        phoneNumber: '111-777-9999',
+        phoneNumber: '111-777-9599',
         email: 'sophia.baker@example.com',
         language: 'hebrew',
         vehicles: [

@@ -4,8 +4,8 @@ const { Schema, model } = require("mongoose");
 const Vehicle = require("./vehicle");
 
 const userSchema = new Schema({
-    phoneNumber: {type: String, required: true},
-    email: {type: String, required: true},
+    phoneNumber: {type: String, required: true, unique: true},
+    email: {type: String, required: true, unique: true},
     hashedPassword: {type: String, required: true},
     language: {type: String, required: true, default: "english"},
     fullName: {type: String, required: true},

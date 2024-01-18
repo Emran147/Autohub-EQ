@@ -22,8 +22,8 @@ class NodeMailerManager {
             await transporter.sendMail(mailOptions);
             console.log(`Email sent to ${toEmail}`);
         } catch (error) {
-            console.error('Error sending email:', error);
-            throw error;
+            // console.error('Error sending email:', error);
+            // throw error;
         }
     }
 }
