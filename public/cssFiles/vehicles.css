@@ -1,0 +1,148 @@
+.car-item {
+    background-color: #f9f9f9;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: 'Arial', sans-serif;
+}
+
+.car-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.toggle-container .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-container .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-container .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.toggle-container .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.carDetails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.carDetails input[type="text"] {
+    flex: 1 1 auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+ .add-car-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.updateDetails {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.delete-car-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+.logo {
+    width: 150px; 
+    height: auto; 
+    display: block;
+    margin: 0 auto; 
+  }
+
+@media (min-width: 768px) {
+    .car-item {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .carDetails input[type="text"] {
+        flex: 0 0 22%; /* Adjust the width for larger screens */
+    }
+
+    .toggle-container {
+        justify-content: start;
+    }
+
+    .updateDetails, .delete-car-button, .add-car-button {
+        width: auto;
+        padding: 10px 20px;
+    }
+}

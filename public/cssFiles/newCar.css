@@ -1,0 +1,50 @@
+.logo {
+    width: 150px; 
+    height: auto; 
+    display: block;
+    margin: 0 auto; 
+  }
+.verification-container {
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  .upload-section {
+    margin: 20px 0;
+  }
+  .upload-field {
+    margin: 10px 0;
+  }
+  .upload-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  input[type="file"] {
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .verification-notice {
+    color: rgb(97, 94, 94);
+    font-size: 12px;
+    margin: 20px 0;
+  }
+  .sub-title{
+    color: #191D6E;
+    font-size: 15px;
+  }
+  .done-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }

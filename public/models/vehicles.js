@@ -14,6 +14,7 @@ class VehiclesModel {
     }
 
     async updateVehicleShareDetails(vehicleId, shareDetails) {
+        console.log(shareDetails)
         const vehicle = await VehicleApiManager.updateVehicleShareDetails(vehicleId, shareDetails);
         this.#updateVehicle(vehicle);
         return vehicle;
@@ -25,7 +26,6 @@ class VehiclesModel {
         return vehicle;
     }
 
-    // TODO
     async deleteVehicle(vehicleId) {
         const response = await VehicleApiManager.deleteVehicle(vehicleId);
         this.#deleteVehicleById(vehicleId);
