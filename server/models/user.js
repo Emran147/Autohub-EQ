@@ -1,4 +1,5 @@
 const User = require("../db/schemas/user");
+const Settings = require("../db/schemas/settings");
 
 class UserModel {
     static getUserById(_id) {
