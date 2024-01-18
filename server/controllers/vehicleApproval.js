@@ -7,7 +7,7 @@ class VehicleApprovalController {
         try {
             const currentUserId = req.userId;
             const isAdmin = UserModel.isAdminById(currentUserId);
-            if(!isAdmin()) {
+            if(!isAdmin) {
                 return res.status(401).send("Permission Denied");
             }
             const vehicleApprovals = await VehicleApprovalsModel.getAllVehicleApprovals();
@@ -23,7 +23,7 @@ class VehicleApprovalController {
         try {
             const currentUserId = req.userId;
             const isAdmin = UserModel.isAdminById(currentUserId);
-            if(!isAdmin()) {
+            if(!isAdmin) {
                 return res.status(401).send("Permission Denied");
             }
             

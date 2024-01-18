@@ -7,14 +7,30 @@
     <link rel="stylesheet" href="./cssFiles/verifications.css">
 </head>
 <body>
-    <div class="card-container">
-        <div class="card">
-            <textarea class="reject-reason" placeholder="Reject Reason"></textarea>
-            <div class="buttons">
-                <button class="verify-button">Verify</button>
-                <button class="reject-button">Reject</button>
-            </div>
-        </div>
+    <div id="vehicleApprovals" class="card-container">
     </div>
+
+    <script id="vehicleApprovals-template" type="text/x-handlebars-template">
+        {{#each vehicleApprovals}}
+            <div class="card">
+                <h3>License Number: {{licenseNumber}}</h3>
+                <h3>User ID: {{userIDNumber}}</h3>
+                <textarea class="reject-reason" placeholder="Reject Reason"></textarea>
+                <div class="buttons">
+                    <button class="verify-button">Verify</button>
+                    <button class="reject-button">Reject</button>
+                </div>
+            </div>
+        {{/each}}
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="config.js"></script>
+    <script src="renderers/component.js"></script>
+    <script src="renderers/vehicleApprovals.js"></script>
+    <script src="apiManagers/vehicleApprovalApiManager.js"></script>
+    <script src="models/vehicleApprovals.js"></script>
+    <script src="controllers/vehicleApprovals.js"></script>
 </body>
 </html>
