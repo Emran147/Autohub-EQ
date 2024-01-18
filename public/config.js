@@ -4,7 +4,7 @@ const baseApiRoutes = {
     ADMIN: "/api/admin/",
     VEHICLE : "/api/vehicles/",
     MESSAGES : "/api/messages/",
-    VEHICLE_APPROVALS: "/api/vehicleApprovals"
+    VEHICLE_APPROVALS: "/api/vehicleApprovals/"
 }
 
 const templates = {

@@ -7,12 +7,7 @@ class VehicleApprovalApiManager {
         return $.post(baseApiRoutes.VEHICLE_APPROVALS, {licenseNumber, userIDNumber});
     }
 
-    static resoleVehicleApproval(approve, msg) {
-        if(approve) {
-            $.post(baseApiRoutes.VEHICLE_APPROVALS + "resolve", {approve})
-        }
-        else {
-            $.post(baseApiRoutes.VEHICLE_APPROVALS + "resolve", {approve, msg})
-        }
+    static resoleVehicleApproval(vehicleApprovalId, approve, msg) {
+        $.post(baseApiRoutes.VEHICLE_APPROVALS + "resolve", {vehicleApprovalId, approve, msg})
     }
 }

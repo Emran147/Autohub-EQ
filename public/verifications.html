@@ -17,8 +17,8 @@
                 <h3>User ID: {{userIDNumber}}</h3>
                 <textarea class="reject-reason" placeholder="Reject Reason"></textarea>
                 <div class="buttons">
-                    <button class="verify-button">Verify</button>
-                    <button class="reject-button">Reject</button>
+                    <button data-id={{_id}} class="verify-button">Verify</button>
+                    <button data-id={{_id}} class="reject-button">Reject</button>
                 </div>
             </div>
         {{/each}}
