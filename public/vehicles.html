@@ -3,42 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cssFiles/vehicles.css">
     <title>Document</title>
 </head>
 <body>
-    Vehicles  page
+    <img src="./assests/5e405f8e-71a4-4683-b49b-127f6b8c169d.jpg" alt="Your Logo" class="logo">
+    <div id="vehiclesContainer" class="car-list-container">
+        
+    </div>
 
     <script id="vehicles-template" type="text/x-handlebars-template">
 
-        {{#each data}}
-        <div class="car-item">
-            <div class="toggle-container">
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
-                <span>Share Car Detail</span>
+        {{#each vehicles}}
+            <div class="car-item">
+                <h2>{{licenseNumber}}</h2>
+                <div class="toggle-container">
+                    <label  class="switch">
+                        <input data-id={{_id}} type="checkbox" class="forsale"
+                        {{#if forsale}}
+                            checked
+                        {{/if}}
+                        >
+                        <span class="slider round"></span>
+                    </label>
+                    <span>For Sale</span>
+                </div>
+                <div class="toggle-container">
+                    <label  class="switch">
+                        <input data-id={{_id}} type="checkbox" class="shareDetails"
+                        {{#if shareDetails}}
+                            checked
+                        {{/if}}
+                        >
+                        <span class="slider round"></span>
+                    </label>
+                    <span>Share Car Detail</span>
+                </div>
+                <div class="carDetails">
+                    <input class="manufacturerInput" type="text" placeholder="Manufacturer" value={{manufacturer}}>
+                    <input class="modelInput" type="text" placeholder="Model" value={{model}}>
+                    <input class="yearInput" type="text" placeholder="Year" value={{year}}>
+                    <input class="noteInput" type="text" placeholder="Note" value={{note}}>
+                    <button data-id={{_id}} class="updateDetails">Save</button>
+                </div>
+                <button data-id={{_id}} class="delete-car-button">Delete Car</button>
             </div>
-            
-        </div>
-        {{/each}}
-        <button class="add-car-button">Add New Car</button>
-        <button class="delete-car-button">Delete Car</button>
-         </script>
+            {{/each}}
+        </script>
+        <!-- <button class="add-car-button">Add New Car</button>
+            <button class="delete-car-button">Delete Car</button> -->
+           <a href="newCar.html"> <button class="add-car-button">Add New Vehicle</button></a>
+   
 
-      <script id="addingVehicle-template" type="text/x-handlebars-template">
-       adding  vehicles template
 
-       </script>
-    
-      <div id="vehiclesContainer"></div>
+     
 </body>
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
         <script src="config.js"></script>
         <script src="./renderers/component.js"></script>
         <script src="./renderers/vehicles.js"></script>
-        <script src="./apiManagers/vehiclesApiManager.js"></script>
+        <script src="./apiManagers/vehicleApiManager.js"></script>
         <script src="./models/vehicles.js"></script>
         <script src="./controllers/vehicles.js"></script>
 </html>

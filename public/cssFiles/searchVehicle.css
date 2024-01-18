@@ -9,18 +9,19 @@
 }
 #vehicleFound{
   position: absolute;
-  top: 20%;
-  left: 25%;
+  top: 50%;
+  left: 18%;
 }
 #vehicleDetails {
   background-color: #f2f2f2; /* Light grey background */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.71); /* Subtle shadow */
   max-width: 400px; /* Adjust as needed */
   margin: auto;
   text-align: center; /* Center-aligns all content */
   font-family: Arial, sans-serif; /* Default font */
+
 }
 
 #vehicleDetails p {
@@ -102,7 +103,14 @@
 }
 
 #licensNumber {
-  margin-left: 27%;
+  width: 70%;
+  margin-left: 10%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 12px;
+
 }
 
 .messagesContainer {
@@ -125,11 +133,17 @@
   margin-bottom: 10px;
   display: block; /* Makes label display as a block-level element */
 }
-
+.logo {
+  width: 150px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
+}
 .messagesContainer .checkbox-inline {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  margin-left: 10%;
 }
 
 .messagesContainer .checkbox-inline input[type="checkbox"] {
@@ -152,7 +166,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: fit-content; /* Adjusts the button width to fit its content */
+  width: 100%; /* Adjusts the button width to fit its content */
   margin-top: 20px; /* Adds space above the button */
 }
 
@@ -167,11 +181,11 @@
     padding: 15px;
   }
   .messagesContainer {
-    width: 50%; /* Adjust width for larger screens */
+    width: 80%; /* Adjust width for larger screens */
 }
 
 .messagesContainer select {
-    width: 50%; /* Adjust width for larger screens */
+    width: 80%; /* Adjust width for larger screens */
 }
 
   #searchInput {

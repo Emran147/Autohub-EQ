@@ -16,6 +16,7 @@
     <script id="search-container-template" type="text/x-handlebars-template">
         <div class="search-container">
             <div class="search-box">
+                <img src="./assests/5e405f8e-71a4-4683-b49b-127f6b8c169d.jpg" alt="Your Logo" class="logo"> 
                 <div class="search-input-container">
                     <input type="text"  placeholder="Search Car By License Number" id="licensNumber">
                     <button id="searchButton" onclick="searchVehicle.searchVehicleByNumber()">Search</button>
@@ -51,6 +52,7 @@
 
      <script id="messageList-template" type="text/x-handlebars-template">
         <div class="messagesContainer">
+            <img src="./assests/5e405f8e-71a4-4683-b49b-127f6b8c169d.jpg" alt="Your Logo" class="logo"> 
             <form action="">
                 <label for="messages">Choose a Message:</label>
                 <select name="messageList" id="messageListdrop">
@@ -61,7 +63,7 @@
                 <label class="checkbox-inline">
                     <input type="checkbox" value="SharePhoneNumber"> Share Phone Number
                 </label>
-                <button onclick="contact.sendMessage()">Send</button>
+                <button class="sendBtn" onclick="contact.sendMessage()">Send</button>
             </form>
         </div>
     </script>

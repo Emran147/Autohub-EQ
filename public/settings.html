@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./cssFiles/settingsStyle.css">
+    <link rel="stylesheet" href="./cssFiles/settingsPage.css">
     <title>Document</title>
 </head>
 <body>
 
     <script id="settings-template" type="text/x-handlebars-template">
         <div class="settings-container">
+            <img src="./assests/5e405f8e-71a4-4683-b49b-127f6b8c169d.jpg" alt="Your Logo" class="logo"> 
+
             <a href="index.html"><button class="icon-button" >⬅️</button></a>
-      <h1 id="title">Settings Page</h1>  
+      <h3 id="title">Settings Page</h3>  
         <br>
         <div class="checkbox-container">
         {{#each settings}}
             <label class="settings">
-                {{name}}: 
+                {{name}}:
+                 
                 <input type="checkbox" class="settings-checkbox" name="{{this.name}}" {{#if this.value}}checked{{/if}}>
             </label>
             <br>

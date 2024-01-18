@@ -23,7 +23,7 @@ app.use(express.static(__dirname + "/public"))
 
 app.use("/api/auth", authRouter);
 
-app.use("/api/vehicle", vehicleRouter);
+app.use("/api/vehicles", vehicleRouter);
 app.use("/api/messages", messagesRouter);
 app.use("/api/settings", settingsRouter);
 app.use("/api/users", userRouter);

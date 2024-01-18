@@ -8,9 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    Profile  page
     <script id="userProfile-template" type="text/x-handlebars-template">
+        <a href="index.html"> <button class="gohome-button">🔙</button> </a>
+        <img src="./assests/5e405f8e-71a4-4683-b49b-127f6b8c169d.jpg" alt="Your Logo" class="logo"> 
+
         <div class="profile-container">
+            <div class="user-info">
         <div>
             <label>Email:</label>
             <span id="emailText">{{email}}</span>
@@ -23,9 +26,10 @@
             <input type="tel" id="phoneNumberInput" value="{{phoneNumber}}" style="display: none;">
             <button onclick="profile.toggleEdit('phoneNumber')">Edit</button>
         </div>
+            </div>
         <div class="button-container">
-            <button class="profile-button">Settings</button>
-            <button class="profile-button">Cars</button>
+            <a href="settings.html">  <button class="profile-button">Settings</button></a>
+            <a href="vehicles.html"> <button class="profile-button">Cars</button> </a>
         </div>
     </div>
     </script>
